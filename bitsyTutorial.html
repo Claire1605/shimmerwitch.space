@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="utf-8">
+	<title>SHIMMERWITCH.SPACE</title>
+	<meta name="description" content="Claire Morley is a game developer and artist based in Bristol, UK">
+	<meta name="keywords" content="game, game development, game developer, indie games, games, art, programming, game design">
+	<meta name="author" content="Claire Morley">
+	<meta name="viewport" content="width=520">
+
+	<base href="/">
+
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet">
+	<link href="shimmerwitch.css" type="text/css" rel="stylesheet" >
+	<link rel="shortcut icon" href="pixelclaire.ico" />
+	
+	<meta property="og:title" content="Shimmerwitch.Space">
+	<meta property="og:description" content="Claire Morley is a game developer and artist based in Bristol, UK">
+	<meta property="og:url" content="https://shimmerwitch.space">
+	<meta property="og:image" content="https://fusejam.games/fuseposter2.png">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1414">
+	<meta property="og:type" content="website">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="https://shimmerwitch.space">
+	<meta name="twitter:creator" content="@shimmerwitch">
+	
+</head>
+<body class="blog">
+
+<div style="display: inline;">
+
+<ul class="boxtext">
+  <li class="dropdown">
+    <a class="menuLink" href="javascript:void(0)" class="dropbtn">About</a>
+    <div class="dropdown-content">
+      <a class="menuLink" href="index.html">Who am I?</a>
+	  <a class="menuLink" href="skills.html">Skills</a>
+	  <a class="menuLink" href="contact.html">Contact</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a class="menuLink" href="javascript:void(0)" class="dropbtn">Work</a>
+    <div class="dropdown-content">
+      <a class="menuLink" href="art.html">Art</a>
+	  <a class="menuLink" href="games.html">Games</a>
+	   <a class="menuLink" href="events.html">Events</a>
+	  <a class="menuLink" href="workshopsandtalks.html">Workshops & Talks</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a class="menuLink" href="javascript:void(0)" class="dropbtn">Journal</a>
+    <div class="dropdown-content">
+      <a class="menuLink" href="blog.html">My blog</a>
+	  <a class="menuLink" href="press.html">Press articles</a>
+    </div>
+  </li>
+</ul>
+
+<br>
+
+<h1 class="logoBlog">A Bitsy Tutorial</h1>
+<br>
+<h2>What is Bitsy?</h2>
+<br>
+Bitsy is a web-based game-making tool on itch.io made by <a class="blogLink" href="https://twitter.com/adamledoux" target="_blank">Adam Le Doux</a>, available at <a class="blogLink" href "https://ledoux.itch.io/bitsy" target="_blank">https://ledoux.itch.io/bitsy</a>.
+<br><br>
+It’s a tool with an active and growing community, with hundreds of games being made ranging from short personal stories to exploration of intricate fantasy worlds, and everything in between.
+<br><br>
+It’s a tool that people love so much because of its constraints. The limited colour palettes, tiny pixel canvas and simple mechanics allow for very focused ideas and thoughts in the games that people create in it. Every pixel, word, and colour decision has so much weight, and is capable of conveying so much in the absence of other noise. But, an 8x8 pixel grid gives you 1.8446744 x 10<sup>19</sup> possible options for every tile. So how limited is that really?
+<br><br>
+It’s also super easy and satisfying to use, with no need to code anything at all. It’s so expressive, and basically every Bitsy game ends up being completely charming by default.
+<br><br><br>
+
+
+<h2>What can I make in Bitsy?</h2>
+<br>
+Bitsy is really great for short narrative games, vignette games (personal or otherwise), or tiny adventures. If you need a place to start, maybe think about an event or a place in your life that you’d like to tell a story about, but your options are infinitely broad, go with whatever feels right!
+<br><br>
+If you need inspiration there are so many excellent Bitsy games on itch.io. <a class="blogLink" href="https://twitter.com/LorenzoPilia" target="_blank">Lorenzo Pilia</a> has made a <a class="blogLink" href="https://itch.io/c/201121/bitsy-faves" target="_blank">really great list of Bitsy games</a> that is regularly updated. I’ve also included a list of some of my own favourites at the end of this tutorial.
+<br><br>
+The game that I made while writing this tutorial is embedded below if you're at a computer, but <a class="blogLink" href="https://claire1605.itch.io/tutorial" target="_blank">also on itch.io</a>.
+<br><br><br>
+<iframe src="Tutorial.html" height="500" width="500" frameborder="0" marginwidth="0" marginheight="0"></iframe>
+<br><br><br>
+
+
+<h2>Enough of this introduction, how do I make a Bitsy game?!</h2>
+<br>
+I’m glad you asked! First, go to <a href="https://ledoux.itch.io/bitsy" target="_blank">https://ledoux.itch.io/bitsy</a>.
+<br><br>
+The first thing you’ll see is this screen:
+<br><br>
+<img src="bitsyTutorialImg\IntroScreen.png"/>
+<br><br>
+Take a minute to look around the various panels and expand the ‘about’ section.
+<br><br>
+At the top of the page is the text ‘Write your game’s title here’.  This will be the opening text in your game, so you might want to change it later once you have a clearer idea of what your game is about. Try changing it to something temporary now though to see how it appears in the game.
+<br><br>
+<img src="bitsyTutorialImg\Screen-Title.png"/>
+<br><br>
+There’s a ‘tools’ button next to this, click on this to look at what other options are available.
+<br><br>
+Next, go back to the ‘room’ panel and press play, walk around in the game to see how a basic Bitsy game works! Straight away you should see the title that you just entered!
+<br><br>
+The main elements of the game are:
+<br>
+ - An avatar - your playable character. They can walk around with the arrow keys and see what other characters have to say
+<br>
+ - Tiles - non-interactive scenery, which can be set as wall-tiles that you can’t walk through
+<br>
+ - Sprites - interactive scenery and non-player characters that can have dialogue
+<br><br>
+Press stop to exit play mode and continue editing your game.
+<br><br><br>
+
+
+<h2>Draw some pixels</h2>
+<br>
+Let’s draw some characters! Make sure the ‘paint’ tool is open -  if you can’t see it, open the ‘tools’ menu and make sure it is selected. If you have lots of tool panels open you can rearrange them by dragging them around in the main screen.
+<br><br>
+With the ‘avatar’ section of the paint tool, you can edit the default character by clicking each square to toggle it on and off. For my avatar, I have chosen to draw a lifelike and realistic rendition of myself, but feel free to draw whatever you wish, you’ll see that it updates the avatar in the ‘room’ panel automatically.
+Toggle the grid on and off for pixel guidelines.
+<br><br>
+Now click on ‘animation’, and your avatar starts flashing. This is the beginning of your first 2-frame Bitsy animation.
+<br><br>
+<img src="bitsyTutorialImg\BitsyAvatar.gif"/>
+<br><br>
+Click on the second frame to edit it, you’ll see a transparent overlay of the other frame to act as a guideline to trace over if you like. This can be really useful if you want to just edit a pixel or two for a simple animation. In your 8x8 grid, you get to make some really cool design choices about how to represent your avatar. What are the most important features you want to show? What defines the character? A surprising number of things can be represented with just one or two pixels if they are in the right context. For now though, I’m just going to wave at you, hi!
+<br><br>
+<img src="bitsyTutorialImg\BitsyAvatarAnimated.gif"/>
+<br><br>
+Let’s draw a few more tiles to add to the room.
+<br><br>
+Click on the ‘tiles’ tab of the ‘paint’ panel.
+Edit the default tile in the same way as you edited your avatar and you'll see that it updates in the room panel automatically.
+<br><br>
+To make a new tile, click the + symbol under the tile image. You'll be given a blank tile to edit as you please. To switch between the tiles you have made, click the left and right arrows below the image. Now click the magnifying glass and the ‘find drawing’ panel opens with a gridded list of the tiles.
+<br><br>
+The tiles in the room work in the same way as editing pixels in a tile - click on a tile to remove it, then click again to place the one that you currently have selected in the ‘find drawing’ panel.
+<br><br>
+In the ‘paint’ tool you can also duplicate and delete tiles, and add animations.
+<br><br>
+Try making and placing a few different tile types in your room! (Clicking and dragging here can be really useful)
+<br>
+The last button to check out here is the ‘walls’ button - you can toggle this to make the tile impassable. An important tip is that setting the wall on/off only applies to one room unless you select ‘for all rooms’ (so if you suddenly find you can walk through walls in your game - that’s the first thing to check!).
+<br><br>
+Try playing your game now and see how it feels to walk around!
+<br><br>
+Currently, my game is me in an empty room talking to a cat - while I don’t hate this idea (honestly, that sounds quite appealing right now), I think I might make some changes for the game I want to make.
+<br><br>
+To edit a sprite, go to the ‘sprite’ tab on the ‘paint’ panel. You can either edit the default cat, or save it and make a new sprite, which will appear in the ‘find drawing’ panel in the same way as the tiles do. Make a new sprite, and add the text that you would like to appear with it. 
+<br><br>
+Click on the room in the tile you would like to appear in. Something to note is that you can only have one instance of any sprite per room - so if you click somewhere else they will appear in this location instead (this also means that if you want the same sprite in multiple rooms you have to duplicate the sprite and place one copy in one room and one copy in another).
+<br><br>
+<img src="bitsyTutorialImg\BitsyTilesAnimated.gif"/>
+<br><br>
+While I’m here, I’m going to change the start location of my avatar by selecting it in the ‘find drawing’ panel and clicking where I want it in the room.
+Once you’ve added your new sprite, play the game again and walk up to it to see your text!
+<br><br>
+<img src="bitsyTutorialImg\Screen-SpriteEdit1.png"/>
+<br><br>
+As a tip - if you make a new room and are overwhelmed by the blank space, try making a really simple tile (even just one solid colour) and block out the rough layout of the room, maybe indicating the path the player will walk through or the location of key objects and scenery. Then you can replace the tiles gradually and move them around until it’s right (this is also how I do any multi-tile pieces of scenery).
+<br><br><br>
+
+
+<h2>Exits!</h2>
+<br>
+If your room is anything like mine, it looks like it needs to lead somewhere else. You could definitely make an entire Bitsy game in one room (see my list at the end for a couple of examples of this), but ‘exits’ (transitions between rooms) are one of the core elements of Bitsy, and are one of the most interestingly explored parts of the tool in my opinion.
+<br><br>
+Let’s start with something basic though and just allow the player to walk into a new room from the edge of this one.
+<br><br>
+Click on the ‘room tools’ tab underneath the room. There’s a few useful navigation and view tools here which are worth exploring. The ‘grid’ button toggles the tile grid on and off, which can make it easier to see what’s going on in the room. The ‘walls’ button shows you a mask of all the tiles that are marked as ‘wall’, which is really handy for quickly checking your collision zones. To make a new room, either use the + button, or the duplicate button next to it if you want to preserve your tile placements. A new room appears and you can now move back and forth between rooms using the arrow buttons.
+<br><br>
+<img src="bitsyTutorialImg\Screen-RoomTools.png"/>
+<br><br>
+Let’s put an exit in first so you can see how it works - you can change the placement, delete it, or add more later if you want to.
+<br><br>
+In the tools menu at the top of Bitsy, make sure ‘exits’ is selected. Navigate back to Room 0, then click ‘place new exit’ in the ‘exits’ panel. A mini-view of the room will appear, and a dropdown list of all your rooms. Select the room you want, and then click on the location in the mini-map for the exit destination. 
+<br><br>
+A good way to think of these exits is as teleporters for your avatar. The exits can lead anywhere, even within the same room. As far as I know there is also no limit on the amount of exits you can place. Once you’ve placed the destination, play the game to see how it works.
+<br><br>
+To edit an exit, click on its tile in the room panel to select it, and the mini-map will reappear so that you can click on a new location for the destination, or drag it over to the desired tile. You can also delete any exit that you have selected using the ‘delete selected exit’ button at the bottom of the ‘exits’ panel. Try placing and editing a few exits until you feel comfortable with the process.
+<br><br>
+<img src="bitsyTutorialImg\Screen-Exits2.png"/>
+<br><br>
+Something to consider when placing exits is how they will affect the player’s orientation. They may become disoriented if you lead them out of the right-hand side of the room, only to appear at the top of the next screen - why has the direction of movement suddenly changed? It can be frustrating if you have to search for your own avatar in a room (I certainly had a few rooms in one of my games that did this…). HOWEVER! Maybe this is the effect you want? Is your game about feeling lost and confused? Then maybe that’s a great way to emphasise that. Or maybe you don’t even want the player to realise they’ve changed rooms? 
+<br><br>
+There’s a LOT of options with exits, and great examples of how they’ve been used (I’ll add some links at the end, because I could talk about this here for a long time).
+<br><br>
+Also, make sure that it’s obvious where your exit actually is (unless that’s part of your game), as it can be a frustrating experience to have to search for a way to continue the game.
+<br><br>
+Oh, also, remember to put exits going back to the previous room unless you want the game to be a one-way system! 
+<br><br><br>
+
+
+<h2>Only 3 colours?!</h2>
+<br>
+It’s probably time to make a few more tiles for your next room, but first I’ll go over color palettes so that you know how they work and can be incorporated into your new rooms.
+<br><br>
+From the tools at the top, make sure ‘colors’ is selected. You’ll see the palette of 3 colours that you can edit, and what they represent in-game. You can either start editing the default palette, or if you want to keep this one, add a new palette by opening the ‘palettes’ section at the bottom, and edit the new one instead. To see how your new palette looks in the game, select the palette you want from the dropdown list at the bottom of the ‘room’ panel. You can set one palette per room, so the 3 colour limit isn’t quite as strict as it sounds!
+When you’re choosing your colours, think about things like how the scene is lit - are the colours warm or cold? Should there be a lot of contrast? Try keeping the background colour constant and changing the lightness of the tile colour for some cool effects! I’ll add some more links at the end with interesting examples of colour use.
+<br><br>
+If you’re stuck you could try a website like <a class="blogLink" href="http://colorschemedesigner.com/csd-3.5/" target="_blank">http://colorschemedesigner.com/csd-3.5/</a>, where you can play around with colour schemes. You could also take a look at <a class="blogLink" href="https://twitter.com/colorschemez" target="_blank">https://twitter.com/colorschemez</a> for some interesting combinations.
+<br><br>
+<img src="bitsyTutorialImg\Screen-Colors1.png"/>
+<br><br><br>
+
+
+<h2>The end, almost</h2>
+<br>
+After you’ve added all the sprites, tiles, rooms and dialogue that you want, you might want a way to end your game (although, really this is optional).
+<br><br>
+Select the ‘endings’ tool, type in the text you want for the ending, and then place it in the same way as you would for an exit. You can have as many endings as you want, and place them wherever you want in the game.
+<br><br>
+Play your game through, and admire your work!
+<br><br>
+<img src="bitsyTutorialImg\Screen-Endings.png"/>
+<br><br><br>
+
+
+<h2>Downloading/Saving your game</h2>
+<br>
+There are a few final tools that I haven’t covered yet. The first is the ‘record gif’ panel, which does exactly what it says. While you are in play mode, press ‘start recording’, move through the sequence you want to record, then press ‘stop recording’. It will only record the time that you are moving, so don’t worry about getting the timing perfect. You can then download the gif to do what you like with!
+<br><br>
+You can also download the html of the game in the ‘download’ panel, which will allow you to upload it to itch.io (and submit it to the monthly Bitsy jams!).
+<br><br>
+You can set the background colour and also the size to export the game at (512px works pretty well for most things).
+<br><br>
+The ‘game data’ panel gives you the text version of the game itself (I always copy and paste it into a text file before starting a new project, just in case). Have a look through this data if you are interested, you’ll be able to see every decision you made here!
+<br><br>
+<img src="bitsyTutorialImg\Screen-Downloads.png"/>
+<br><br><br>
+
+
+<h2>I want to make more games!</h2>
+<br>
+If you are happy with your game, it’s downloaded and saved and you’re ready to move on - start a new game with the ‘new game’ button! If you refresh the page or close your browser, the most recent version of whatever Bitsy game you are working on will be opened. But once you have started a new game it’s not an easy process to get the game back unless you’ve saved out the game data, so make sure you are ready to move on, and when you are, create away!
+<br><br><br>
+
+
+<h2>Game Data for the Tutorial game</h2>
+<br>
+I'll pop the game data for the game I made while writing this tutorial here in case anyone wants to just play around with it - it's got a section of interesting room transitions so you can see how that works (although, it actually looks kind of intense as I had to duplicate a LOT of sprites to do it, and there's at least 4 exits per room, but, it can be done! Oh, you'll also notice blocks of ~80 identical sprites, that's for the colour palette rooms - I mean, don't do what I did, find a better way to do something cooler!)
+<br>
+<a class="blogLink" href="Tutorial_GameData.txt" download>Here's the game data!</a>
+<br><br>
+<a class="blogLink" href="https://claire1605.itch.io/tutorial" target="_blank">The game itself is playable here</a>
+<br><br><br>
+
+
+<h2>Extra Bitsy Tips!!</h2>
+<br>
+The wonderful Bitsy community have created a Wiki with tips and hacks for extra fan-made Bitsy features.
+​<br><br>
+<a class="blogLink" href="http://bitsy.wikia.com/wiki/Bitsy_Wiki" target="_blank">I'm ready to explore...</a>
+<br><br><br>
+
+
+<h2>Cool examples of cool games</h2>
+<br>
+I’d like to include some examples of Bitsy games that I’ve particularly enjoyed in the past (today being 7th October 2017, as a disclaimer to all the amazing future-Bitsy games I’m inevitably going to forget to add in to this list at a later date), ones that I’ve found particularly inspirational when thinking about my own games:
+<br><br>
+Interesting narrative:
+<a class="blogLink" href="https://rhythmlynx.itch.io/wip" target="_blank">https://rhythmlynx.itch.io/wip</a> - an autobiography, and inspiration for my tutorial game
+<a class="blogLink" href="https://arcadim.itch.io/local-network" target="_blank">https://arcadim.itch.io/local-network</a> - this one goes deep
+<br><br>
+Amazing room transitions:
+<a class="blogLink" href="https://seansleblanc.itch.io/rain" target="_blank">https://seansleblanc.itch.io/rain</a> - transitions can be time as well as space
+<a class="blogLink" href="https://saranomy.itch.io/ihadb" target="_blank">https://saranomy.itch.io/ihadb</a> - it looks so simple until you remember how it’s made
+<br><br>
+Interesting avatars:
+<a class="blogLink" href="https://cephalopodunk.itch.io/silence-would-be-better" target="_blank">https://cephalopodunk.itch.io/silence-would-be-better</a> - you are a radio
+<a class="blogLink" href="https://seansleblanc.itch.io/i-wonder" target="_blank">https://seansleblanc.itch.io/i-wonder</a> - listen to people’s thoughts
+<a class="blogLink" href="https://acgodliman.itch.io/tomb-raider" target="_blank">https://acgodliman.itch.io/tomb-raider</a> - discover archaeology
+<br><br>
+Perspectives:
+<a class="blogLink" href="https://jctwood.itch.io/thirdcrypt" target="_blank">https://jctwood.itch.io/thirdcrypt</a> - first-person
+<a class="blogLink" href="https://night-driver.itch.io/day-in-the-life" target="_blank">https://night-driver.itch.io/day-in-the-life</a> - side-scroller
+<a class="blogLink" href="https://rarelikeaunicorn.itch.io/penroses" target="_blank">https://rarelikeaunicorn.itch.io/penroses</a> isometric
+<br><br>
+Use of other game genres:
+<a class="blogLink" href="https://tencow.itch.io/metrodungeon" target="_blank">https://tencow.itch.io/metrodungeon</a> - has an interesting battle mechanic
+<a class="blogLink" href="https://joshavanier.itch.io/porte" target="_blank">https://joshavanier.itch.io/porte</a> - a cool puzzle game!
+<a class="blogLink" href="https://ebeth.itch.io/slow-growing" target="_blank">https://ebeth.itch.io/slow-growing</a> - a farming sim!
+<br><br>
+Use of audio! This still amazes me...:
+<a class="blogLink" href="https://triage.itch.io/waking-up-while-the-sun-sets" target="_blank">https://triage.itch.io/waking-up-while-the-sun-sets</a> - beautiful soundtrack
+<a class="blogLink" href="https://candle.itch.io/no-destination" target="_blank">https://candle.itch.io/no-destination</a> - ambient sound effects
+<br><br>
+Beautiful art:
+<a class="blogLink" href="https://itch.io/g/samkeeper/moth" target="_blank">https://itch.io/g/samkeeper/moth</a>
+<a class="blogLink" href="https://supiket.itch.io/tusanhomichi" target="_blank">https://supiket.itch.io/tusanhomichi</a>
+<a class="blogLink" href="https://hyperstructure.itch.io/a-secret-bitsy-jam" target="_blank">https://hyperstructure.itch.io/a-secret-bitsy-jam</a>
+<br><br>
+Experiments with Bitsy:
+<a class="blogLink" href="https://jctwood.itch.io/tunnel" target="_blank">https://jctwood.itch.io/tunnel</a> - double Bitsy!
+<br><br>
+'One Room' games:
+<a class="blogLink" href="https://seansleblanc.itch.io/running-late" target="_blank">https://seansleblanc.itch.io/running-late</a>
+<a class="blogLink" href="https://cephalopodunk.itch.io/zen-garden-portland" target="_blank">https://cephalopodunk.itch.io/zen-garden-portland</a>
+<br><br>
+And if you're interested, you can find my games at <a class="blogLink" href="https://claire1605.itch.io/" target="_blank">https://claire1605.itch.io/</a>
+<br>
+You can also find me at <a class="blogLink" href="https://twitter.com/shimmerwitch" target="_blank">https://twitter.com/shimmerwitch</a>
+<br><br>
+Also thank you <a class="blogLink" href="https://twitter.com/ragzouken" target="_blank">Mark</a> for helping me edit this and adding some great advice!
+<br><br>
+And obviously thank you <a class="blogLink" href="https://twitter.com/adamledoux" target="_blank">Adam</a> for making Bitsy and the whole amazing community that surrounds it!!
+<br><br>
+
+<!--
+<div id="float1" class="bgrdStar1">
+</div>
+
+<div id="float2" class="bgrdStar2">
+</div>
+
+<div id="float3" class="bgrdStar3">
+</div>
+!-->
+
+</body>
+</html>

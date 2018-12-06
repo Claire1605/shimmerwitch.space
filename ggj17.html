@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="utf-8">
+	<title>SHIMMERWITCH.SPACE</title>
+	<meta name="description" content="Claire Morley is a game developer and artist based in Bristol, UK">
+	<meta name="keywords" content="game, game development, game developer, indie games, games, art, programming, game design">
+	<meta name="author" content="Claire Morley">
+	<meta name="viewport" content="width=520">
+
+	<base href="/">
+
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet">
+	<link href="shimmerwitch.css" type="text/css" rel="stylesheet" >
+	<link rel="shortcut icon" href="pixelclaire.ico" />
+	
+	<meta property="og:title" content="Shimmerwitch.Space">
+	<meta property="og:description" content="Claire Morley is a game developer and artist based in Bristol, UK">
+	<meta property="og:url" content="https://shimmerwitch.space">
+	<meta property="og:image" content="https://fusejam.games/fuseposter2.png">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1414">
+	<meta property="og:type" content="website">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="https://shimmerwitch.space">
+	<meta name="twitter:creator" content="@shimmerwitch">
+	
+</head>
+<body class="blog">
+
+<div style="display: inline;">
+
+<ul class="boxtext">
+  <li class="dropdown">
+    <a class="menuLink" href="javascript:void(0)" class="dropbtn">About</a>
+    <div class="dropdown-content">
+      <a class="menuLink" href="index.html">Who am I?</a>
+	  <a class="menuLink" href="skills.html">Skills</a>
+	  <a class="menuLink" href="contact.html">Contact</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a class="menuLink" href="javascript:void(0)" class="dropbtn">Work</a>
+    <div class="dropdown-content">
+      <a class="menuLink" href="art.html">Art</a>
+	  <a class="menuLink" href="games.html">Games</a>
+	   <a class="menuLink" href="events.html">Events</a>
+	  <a class="menuLink" href="workshopsandtalks.html">Workshops & Talks</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a class="menuLink" href="javascript:void(0)" class="dropbtn">Journal</a>
+    <div class="dropdown-content">
+      <a class="menuLink" href="blog.html">My blog</a>
+	  <a class="menuLink" href="press.html">Press articles</a>
+    </div>
+  </li>
+</ul>
+
+<br>
+
+<h1 class="logoBlog">GLOBAL GAME JAM 2017</h1>
+<br>
+Theme: Waves
+<br>
+Game: Raijin and Fujin
+<br>
+Team: Claire, Adam, Jack, Jacob, Giorgio
+<br>
+Game: <a class="blogLink" href="http://globalgamejam.org/2017/games/raijin-and-fujin" target="_blank">http://globalgamejam.org/2017/games/raijin-and-fujin</a>
+<br>
+Source: <a class="blogLink" href="https://github.com/JWLD/raijinandfujin/tree/master/Assets" target="_blank">https://github.com/JWLD/raijinandfujin/tree/master/Assets</a>
+<br><br>
+​​This was my second Global Game Jam experience, and both have been one of my favourite weekends of each year. This year I tried particularly to work with people I didn’t know that well before and to try to branch out as much as possible, and I ended up in a team with a really good range of skills and interests.
+<br><br>
+After the theme of ‘Waves’ was announced, we started to make a list of everything we could think of that had anything to do with waves. We also checked out the diversifiers for this year and noticed one about using a musical instrument as an input. This idea seemed instantly appealing so we decided to explore that. Jacob suggested basing the game around a Japanese legend of the gods Raijin and Fujin. Raijin, the god of thunder, uses his drums to create thunderclouds that bring rain to water paddy fields. His brother, Fujin, controls the winds. We got pretty excited about the prospect of hooking up a Rock Band/Taiko Drum Master style drum input as a controller, until we remembered that we have 48 hours to make an entire game, and none of us own Rock Band – so we decided to go for traditional controls, with ‘uses real drums’ added to the inevitable list of ‘things we didn’t have time to do’.
+<br><br>
+Raijin and Fujin is a game where you play as Raijin, sending out soundwaves from your drums to divert clouds into Fujin’s wind currents to water the fields in the land below them. Keep the rice in the fields growing, but avoid flooding the villages at the same time!
+<br><br>
+With Jacob’s traditional art skills, and Giorgio’s audio expertise, this game idea felt like something that could end up looking pretty cool, so Adam, Jack and I started working on the programming.
+<br><br>
+After a quick trip to the art store to buy ink and brushes, we talked about the mechanics of the game. How do the clouds move around the map, and what role does the player have in that? How can you tell what parts of the map have been ‘watered’, and what are the win conditions? What are the challenges you face?
+<br><br>
+We decided to have several drums on the screen at strategic locations, with each producing a visual soundwave when hit. To represent Fujin creating the wind, we wanted to have wind currents on the screen that would push the clouds around. This created a nice mechanic, sometimes helping the player get clouds where they wanted, and sometimes pushing them in completely the wrong direction – it ended up making the game quite challenging and strategic when trying to control several clouds at once!
+<br><br>
+Jack started work on the wind currents, using trigger colliders that modify the rotation of the clouds to follow the currents when in contact with them. The effect was awesome, making the clouds follow the wind currents perfectly. Adam began working on the main gameplay, with a mechanism that pushed clouds out from the drum when hit.
+<br><br>
+We then started thinking about how the clouds would know where they are on the map, so that they could rain in the right location on the ground below. The game would also need to know if the clouds were raining on a town (which would get flooded – negative score) or a field (which would get watered – positive score). We talked about using a grid of trigger colliders on the map, which could then be assigned a ‘town’ or ‘field’ value to distinguish them. I suggested using a shader to colour in the map, showing where the rainclouds had hit. The shader used a base texture (in this case, the main map in greyscale), a second texture (the map in full colour) and an alpha mask. The second texture is rendered based on the threshold level of alpha mask. With this in mind, Adam created a script that incremented a variable for each collider in the grid as you moved through it, and decremented over time after you left it. He then generated a texture that corresponded to these values on the map – creating a greyscale trail of the path of the clouds. THEN, this texture could be used as the alpha mask in my shader. The effect of this was that it looked like the clouds were painting in the map as they drifted over them, and the colours slowly faded out over time. That was my favourite tech moment of the entire weekend.
+<br><br>
+<p style="text-align:center;">
+<img src="ggj17Img\GridColliders.gif"/>
+</p>
+<p style="text-align:center;">
+<img src="ggj17Img\Shader_d400.png"/>
+</p>
+<br>
+After that I took a break to help Giorgio by punching some water and turning on the shower.
+Recording sound effects is pretty fun!
+<br><br>
+My next task was to work out a way of making the clouds (2D sprites) cast shadows onto the map (ironically this took about 4 hours of work and due to an issue in my shader that I’d forgotten about they’re not even present in the build we submitted to GGJ). I started looking into ways of generating a 3D mesh from a 2D object in Blender, and found that it’s possible if you import a vectorised image and then extrude the curves. Originally I was planning to make a solid shadow that covered the whole shape of the cloud, but after experimenting in Inkscape, I decided that tracing the lines of Jacob’s hand-drawn clouds would give a much cooler effect and be more consistent with the art style.
+<br><br>
+<p style="text-align:center;">
+<img src="ggj17Img\Shadow2_d400.png"/>
+</p>
+<p style="text-align:center;">
+<img src="ggj17Img\Shadow_d400.png"/>
+</p>
+<br>
+One of the last effects left to make was the rain. In traditional Japanese paintings, rain tends to appear as thin straight lines, which made the artistic side of it easy. I drew a brush stroke to use as a sprite in a particle effect, and set a few options such as making the particles decrease in size over time, emit in a single direction from the edge of a box, and render a slight transparent trail behind them. The effect was great and matched the style perfectly!
+<br><br>
+While I’d been working on these effect, the rest of the team had been making amazing progress with their work. Jacob’s art was looking stunning and we processed it to make it ready for the game. I used a watercolour-style brush in Photoshop to paint over the green and blue areas of the map to represent it in its ‘watered’ state. Giorgio created an amazing soundtrack and put together all the sound effects for the game such as the rain and the drums. Adam and Jack worked on the rest of the gameplay mechanics, menu and level design in Unity.
+<br><br>
+In the final hour of the Jam we frantically put the remainder of the level together just in time to submit to the GGJ website. After that we were able to relax while we did a small presentation and then watched the other teams talk about the games they had made. There was an amazing range of games, and all were incredibly well made for the time that we had available. Our game ended up getting a special mention at the end after the judge’s results had been announced, which felt great!
+<br><br>
+The weekend was such an amazing experience overall, I met a lot of awesome people, and I can’t wait for the next jam!
+<br><br>
+<p style="text-align:center;">
+<img src="ggj17Img\screenshot_d600.png"/>
+</p>
+<p style="text-align:center;">
+<img src="ggj17Img\16174639_10154054518505899_8876034577889285157_n_d600.jpg"/>
+</p>
+
+<!--
+<div id="float1" class="bgrdStar1">
+</div>
+
+<div id="float2" class="bgrdStar2">
+</div>
+
+<div id="float3" class="bgrdStar3">
+</div>
+!-->
+
+</body>
+</html>
