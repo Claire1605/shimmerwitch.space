@@ -65,20 +65,20 @@
 <br>
 I’ve been playing around with an alpha-cutout shader and have used it along with a couple of modified versions to create the majority of the visual effects of the game, which gives a nicely consistent feel to the art style.
 <br><br>
-The art style for the game is centred around soft, pastel colours that fade in from grey as you explore Sunita’s house and trigger her thoughts and memories associated with her possessions. The effect that we wanted to achieve was for the entire house to be rendered in grayscale initially. When you interact with an item, colour appears to spread out from it to signify a strong memory/clarity returning around that object. The idea with this would be that the player brings colour back to her house as they discover more about her past and present.
+The art style for the game is centered around soft, pastel colours that fade in from gray as you explore Sunita’s house and trigger her thoughts and memories associated with her possessions. The effect that we wanted to achieve was for the entire house to be rendered in grayscale initially. When you interact with an item, colour appears to spread out from it to signify a strong memory/clarity returning around that object. The idea with this would be that the player brings colour back to her house as they discover more about her past and present.
 I’d used a customise alpha cutout shader on a previous prototype project with a friend, which used different alpha masks to fade textures in and out. I decided to modify this to create a shader that uses the alpha mask to fade between two textures, rather than fading to transparent. This allowed me to fade between a grayscale and a coloured texture on each object.
 <br><br>
 <p style="text-align:center;">
 <img src="bifShaderImg\BeforeIForget_d600.png"/>
 </p>
 <br>
-Within the shader code, this works by checking if the colour value of the alpha mask texture (0 for white, 1 for black) is greater than the alpha cutoff slider value. If so, the grey texture is assigned at that UV co-ordinate, if not then the coloured texture is assigned.​
+Within the shader code, this works by checking if the colour value of the alpha mask texture (0 for white, 1 for black) is greater than the alpha cutoff slider value. If so, the gray texture is assigned at that UV co-ordinate, if not then the coloured texture is assigned.​
 <br><br>
 <p style="text-align:center;">
 <img src="bifShaderImg\Shader.gif"/>
 </p>
 <br>
-The alpha mask that I mostly use gives a painted look to the fade, and generally fades the object from one corner of the UV map. I experimented with a more ‘precise’ fade, using the UV map as a base to place gradients over.
+The alpha mask that I mostly use gives a painted look to the fade, and generally fades the object from one corner of the UV map. I experimented with a more 'precise' fade, using the UV map as a base to place gradients over.
 <br><br>
 <p style="text-align:center;">
 <img src="bifShaderImg\Shader-Table.gif"/>
