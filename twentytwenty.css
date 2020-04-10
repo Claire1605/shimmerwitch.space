@@ -1,15 +1,15 @@
 :root{
-	--bgrd: #F4EAFF;
-	--textMainCol: #FFFF00;
-	--textSmallCol: #FFA300;
-	--textBgrdCol: #A44CFF;
-	--textBgrdBorderCol: #3E007F;
+	--bgrd: #ffffff;
+	--textMainCol: #000000;
+	--textSmallCol: #000000;
+	--textBgrdCol: #000000;
+	--textBgrdBorderCol: #4bc4b5aa;
 	--buttonBgrdCol: #CC5852;
 	--shadowCol: #4bc4b5aa;
 	--dropdownBgrdCol: #BD86FF;
 	--dropdownHoverCol: #FB4991;
 	--menuLinkCol: #F5F3DD;
-	--urlLinkCol: #F5F3DD;
+	--urlLinkCol: #CC5852;
 	--blogBgCol: #ecede6;
 	--blogFontCol: #e2804a;
 	--blogFontLinkCol: #0bdd94;
@@ -33,18 +33,16 @@ html, body {
 	/*width: 500px;*/
 }
 
-.blog{
-	
+.archiveList{
 	font-family: 'Imprima', cursive;
-	font-size: 20px;
+	font-size: 14px;
 	line-height: 24px;
+	color: var(--textMainCol);
 	padding: 0;
 	margin: 0 auto;
     height: 100%;
 	background-attachment: fixed;
-	width: 500px;
-	color: var(--blogFontCol);
-	background-color: var(--blogBgCol);
+	/*width: 500px;*/
 }
 
 .wrapper {

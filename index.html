@@ -23,7 +23,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet">
-	<link href="shimmerwitch.css" type="text/css" rel="stylesheet" >
+	<link href="twentytwenty.css" type="text/css" rel="stylesheet" >
 	<link rel="shortcut icon" href="pixelclaire.ico" />
 	
 	<meta property="og:title" content="Shimmerwitch.Space">
@@ -37,67 +37,186 @@
 	<meta name="twitter:site" content="https://shimmerwitch.space">
 	<meta name="twitter:creator" content="@shimmerwitch">
 </head>
-<body class="bgrdBlendFade">
+<body onload="LoadArchiveList()" class="bgrdBlendFade">
 
-<div style="display: inline;">
 
-<ul class="boxtext">
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">About</a>
-    <div class="dropdown-content">
-      <a href="index.html">Who am I?</a>
-	  <a href="skills.html">Skills</a>
-	  <a href="contact.html">Contact</a>
-    </div>
-  </li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Work</a>
-    <div class="dropdown-content">
-      <a href="art.html">Art</a>
-	  <a href="games.html">Games</a>
-	   <a href="events.html">Events</a>
-	  <a href="workshopsandtalks.html">Workshops & Talks</a>
-    </div>
-  </li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Journal</a>
-    <div class="dropdown-content">
-      <a href="blog.html">My blog</a>
-	  <a href="press.html">Press articles</a>
-    </div>
-  </li>
-</ul>
+<table style="width:100%; height:100%; border-spacing: 0px; text-shadow: 1px 1px #000000; color: white">
+  <tr>
 
-<br>
+    <th style="min-width: 200px; width:15%; border-right: 2px; border-left: 0px; border-spacing: 0px; border-top: 0px; border-bottom: 0px; border-style: solid; padding-right: 4px">
+	<div id="archiveList" class="archiveList" width="100%" height="100%" align="left" scrolling="yes">
+	</div>
+	</th>
 
-<h1 class="logo">Claire Morley</h1>
+    <th style="min-width: 400px;width:85%; height: 100%">
+		<iframe id="pageContent" src="Pages/home.html" width="100%" height="100%" scrolling="yes" frameborder="0" style="background-color: #ffffff77;  padding-left: 20px;">
+		<p>Your browser does not support iframes.</p>
+		</iframe>
+		<div id="placeholderContent" width="100%" height="100%" scrolling="yes" frameborder="0" style="display: none; background-color: #ffffff77; position: absolute; top: 50px; left: 20%;">
+		<p>Your browser does not support iframes.</p>
+		</div>
+	</th> 
 
-<br>
+  </tr>
+</table>
 
-<p>I'm a self-taught programmer, artist and game designer. I work freelance as well as on my own personal projects, and have a number of creative interests including pixel art, claymation, C#, developing in Unity and web design</p>
-<br>
-<p class="hoverbutton"><a target="_blank" href="https://twitter.com/shimmerwitch">&nbsp;&nbsp;&nbsp;Follow me @shimmerwitch</a></p>
-<br><br>
-I'm currently working on Before I Forget at <a href="http://twitter.com/3foldgames" target="_blank">3-Fold Games</a>
-<br><br>
-<p style="text-align:center;">
-<iframe src="https://youtube.com/embed/c22tIRe-_0I" height="315" width="420" ></iframe>
-</p>
-<br><br>
-as well as <a href="art.html" target="_blank">art</a> and programming on a few other <a href="games.html" target="_blank">games</a> and running a couple of <a href="events.html" target="_blank">events</a>!
-<br><br><br>
-</div>
+<script>
 
-<!--
-<div id="float1" class="bgrdStar1">
-</div>
+function LoadArchiveList() {
+  var csvFile = new Request('Archive.csv');
+  fetch(csvFile).then(function(response) {
+    return response.text().then(function(text) {
+		PopulateArchiveList(text, "");
+		storedText = text;
+    });
+  });
+}
 
-<div id="float2" class="bgrdStar2">
-</div>
+var storedText;
 
-<div id="float3" class="bgrdStar3">
-</div>
-!-->
+function PopulateArchiveList(text, filterTag)
+{
+	var lines=text.split("\n");
+
+	var result = [];
+
+	  var headers=lines[0].split(";");
+
+	for(var i=1;i<lines.length;i++){
+
+	if (!lines[i]=="")
+	{
+	 var obj = {};
+	  var currentline=lines[i].split(";");
+
+	  for(var j=0;j<headers.length;j++){
+		  obj[headers[j]] = currentline[j];
+	  }
+
+	  result.push(obj);
+	}
+	}
+
+	placeholder = document.getElementById("archiveList");
+
+	placeholder.innerHTML = "";
+	
+	var home = document.createElement('a');
+	home.setAttribute("onclick", "UpdateIFrame('home', '')");
+	home.innerHTML = "Home";
+	home.style= "cursor: pointer; font-size:24px; text-decoration: underline; text-align: right; color: #ffffff";
+	placeholder.appendChild(home);
+
+	var arc = document.createElement('div');
+	arc.setAttribute("style", "font-size:24px; width: 100%;");
+	if (filterTag == ""){
+	newText = document.createTextNode("Archive");
+	}
+	else
+	{
+	newText = document.createTextNode("Archive/" + filterTag);
+	}
+
+	arc.appendChild(newText);
+	placeholder.appendChild(arc);
+
+	var tags = ["All"];
+
+	var tagColours = {"Game": "#A68CFF", "Prototype": "#AFC4CE", "Visual Art": "#C2CB74", "Talk": "#FA6D92", "Event": "#FAA36A"};
+	
+	var filterText = document.createElement('span');
+	newText = document.createTextNode("filter by: ");
+	filterText.appendChild(newText);
+	var br = document.createElement("br");
+    filterText.appendChild(br);
+	placeholder.appendChild(filterText);
+
+	var tag = document.createElement('span');
+	tag.setAttribute("style", "cursor: pointer; font-size:16px; color: #000000;");
+	newText = document.createTextNode("[all] ");
+	tag.appendChild(newText);
+	tag.setAttribute("onclick", "PopulateArchiveList(storedText,'');");
+	placeholder.appendChild(tag);
+
+	for(var i = 0; i < result.length; i++) {
+	 var t = result[i];
+	 if (!tags.includes(t.Tag))
+	 {
+		tags.push(t.Tag);
+		
+		var tag = document.createElement('span');
+		tag.setAttribute("style", "cursor: pointer; font-size:16px; color: " + tagColours[t.Tag] + ";");
+		newText = document.createTextNode("[" + t.Tag.toLowerCase() + "] ");
+		tag.appendChild(newText);
+		tag.setAttribute("onclick", "PopulateArchiveList(storedText,'" + t.Tag + "');");
+		placeholder.appendChild(tag);
+	 }
+	}
+
+
+	var currentYear = result[1].Year + 1;
+
+	 for(var i = 0; i < result.length; i++) {
+		
+		var t = result[i];
+
+		if (filterTag != "" && filterTag != t.Tag)
+		{
+			continue;
+		}
+
+		if (t.Year != currentYear)
+		{
+		    var p = document.createElement('p');
+			p.setAttribute("style", "font-size:18px;margin-top: 10px; margin-bottom: 6px; color: #ffffff");
+			newText = document.createTextNode(t.Year);
+			p.appendChild(newText);
+			placeholder.appendChild(p);
+
+			currentYear = t.Year;
+		}
+
+	    newLink = document.createElement("a");
+		newLink.setAttribute("style", "color:#ffffff");
+
+		newText = document.createTextNode(t.MonthName + ": ");
+		newLink.appendChild(newText);
+		placeholder.appendChild(newLink);
+
+		newLink = document.createElement("a");
+		newLink.setAttribute('onclick', "UpdateIFrame('" + t.HTMLPage + "', '" + t.Description + "');");
+		newLink.setAttribute("style", "color:"/*#CC5852*/ + tagColours[t.Tag] + "; cursor:pointer");
+
+		newText = document.createTextNode(t.NameAbbrev);
+		newLink.appendChild(newText);
+		placeholder.appendChild(newLink);
+
+		var br = document.createElement("br");
+        var a = document.getElementById("archiveList");
+        a.appendChild(br);
+	}
+}
+
+function UpdateIFrame(htmlPage, placeholderDescription)
+{
+	if (htmlPage == "")
+	{
+		document.getElementById("pageContent").style.display = "none";
+		document.getElementById("placeholderContent").style.display = "block";
+		document.getElementById("placeholderContent").innerHTML = placeholderDescription;
+	}
+	else
+	{
+		document.getElementById("placeholderContent").style.display = "none";
+		var iframeContent = document.getElementById("pageContent").contentWindow.document;
+		iframeContent.body.innerHTML = "";
+		document.getElementById("pageContent").style.display = "inline-block";
+		document.getElementById("pageContent").src="Pages/"+htmlPage+".html";
+	}
+}
+
+</script>
 
 </body>
+
 </html>
