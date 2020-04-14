@@ -9,7 +9,7 @@
 	--dropdownBgrdCol: #BD86FF;
 	--dropdownHoverCol: #FB4991;
 	--menuLinkCol: #F5F3DD;
-	--urlLinkCol: #CC5852;
+	--urlLinkCol: #BF2247;
 	--blogBgCol: #ecede6;
 	--blogFontCol: #e2804a;
 	--blogFontLinkCol: #0bdd94;
@@ -430,6 +430,7 @@ p {
 	margin: 0;
 	padding: 0;
 	margin-bottom: 8px;
+	font-size: 18px;
 }
 
 .center { text-align: center; }

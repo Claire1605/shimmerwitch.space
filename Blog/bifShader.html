@@ -32,33 +32,6 @@
 
 <div style="display: inline;">
 
-<ul class="boxtext">
-  <li class="dropdown">
-    <a class="menuLink" href="javascript:void(0)" class="dropbtn">About</a>
-    <div class="dropdown-content">
-      <a class="menuLink" href="index.html">Who am I?</a>
-	  <a class="menuLink" href="skills.html">Skills</a>
-	  <a class="menuLink" href="contact.html">Contact</a>
-    </div>
-  </li>
-  <li class="dropdown">
-    <a class="menuLink" href="javascript:void(0)" class="dropbtn">Work</a>
-    <div class="dropdown-content">
-      <a class="menuLink" href="art.html">Art</a>
-	  <a class="menuLink" href="games.html">Games</a>
-	   <a class="menuLink" href="events.html">Events</a>
-	  <a class="menuLink" href="workshopsandtalks.html">Workshops & Talks</a>
-    </div>
-  </li>
-  <li class="dropdown">
-    <a class="menuLink" href="javascript:void(0)" class="dropbtn">Journal</a>
-    <div class="dropdown-content">
-      <a class="menuLink" href="blog.html">My blog</a>
-	  <a class="menuLink" href="press.html">Press articles</a>
-    </div>
-  </li>
-</ul>
-
 <br>
 
 <h3 class="logoBlog">BEFORE I FORGET - VISUAL EFFECTS</h3>
@@ -69,31 +42,31 @@ The art style for the game is centered around soft, pastel colours that fade in 
 I’d used a customise alpha cutout shader on a previous prototype project with a friend, which used different alpha masks to fade textures in and out. I decided to modify this to create a shader that uses the alpha mask to fade between two textures, rather than fading to transparent. This allowed me to fade between a grayscale and a coloured texture on each object.
 <br><br>
 <p style="text-align:center;">
-<img src="bifShaderImg\BeforeIForget_d600.png"/>
+<img src="Blog\bifShaderImg\BeforeIForget_d600.png"/>
 </p>
 <br>
 Within the shader code, this works by checking if the colour value of the alpha mask texture (0 for white, 1 for black) is greater than the alpha cutoff slider value. If so, the gray texture is assigned at that UV co-ordinate, if not then the coloured texture is assigned.​
 <br><br>
 <p style="text-align:center;">
-<img src="bifShaderImg\Shader.gif"/>
+<img src="Blog\bifShaderImg\Shader.gif"/>
 </p>
 <br>
 The alpha mask that I mostly use gives a painted look to the fade, and generally fades the object from one corner of the UV map. I experimented with a more 'precise' fade, using the UV map as a base to place gradients over.
 <br><br>
 <p style="text-align:center;">
-<img src="bifShaderImg\Shader-Table.gif"/>
+<img src="Blog\bifShaderImg\Shader-Table.gif"/>
 </p>
 <p style="text-align:center;">
-<img src="bifShaderImg\TableUVFade_d400.png"/>
+<img src="Blog\bifShaderImg\TableUVFade_d400.png"/>
 </p>
 <br>
 In theory, this is really cool, as I can accurately control the fade from a starting point in the scene - and I can even control the timing of the fade across more complex objects by using different colour ranges for the gradients. In the UV map image above, some sections (e.g. the table leg in the top-right) are darker overall, which means they fade in first. In practice though, I’m probably not going to use this due to the number of custom textures it would need. The effect achieved from a rough approximation of this still looks really good (i.e. the first GIF above), and I can control the timing well enough with a variable controlling the speed of the fade. The fade is controlled in a co-routine, and I've linked the timing of this up to an animation curve for greater control. If, for example, I want an object to fade in towards the end of a sequence, I can use curves like those shown below to control the speed. If both objects start fading at the same time, the object using the top curve will fade in quickly at the start and be fully coloured by the time the object using the bottom curve begins its fade.
 <br><br>
 <p style="text-align:center;">
-<img src="bifShaderImg\Curve1_d600.png"/>
+<img src="Blog\bifShaderImg\Curve1_d600.png"/>
 </p>
 <p style="text-align:center;">
-<img src="bifShaderImg\Curve2_d600.png"/>
+<img src="Blog\bifShaderImg\Curve2_d600.png"/>
 </p>
 <br>
 The game’s text system also uses a variant of this shader that fades to transparent, in order to fade the text in and out as Sunita’s thoughts are revealed.  ​
@@ -102,17 +75,6 @@ Another nice application of the shader is in combination with the game’s audio
 There’s been a large amount of research into the effects of music on people with dementia (http://www.ageuk.org.uk/health-wellbeing/conditions-illnesses/dementia-and-music/, e.g.) so I think the visual difference in the objects associated with music in the game will be really interesting to develop further.
 There’s some other exciting ideas I’ve got for use of this shader, but I don’t want to give everything away just yet!
 <br><br><br>
-
-<!--
-<div id="float1" class="bgrdStar1">
-</div>
-
-<div id="float2" class="bgrdStar2">
-</div>
-
-<div id="float3" class="bgrdStar3">
-</div>
-!-->
 
 </body>
 </html>
