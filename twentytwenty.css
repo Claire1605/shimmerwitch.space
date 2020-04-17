@@ -42,6 +42,8 @@ html, body {
 	margin: 0 auto;
     height: 100%;
 	background-attachment: fixed;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	/*width: 500px;*/
 }
 
@@ -410,7 +412,6 @@ h4{
 }
 
 .bgrdBlendFade {
-    height: 100px;
     background-image: url('pinkBgrdStars.jpg');
     background-blend-mode: lighten;
   -webkit-animation-name: bgrdFade;
