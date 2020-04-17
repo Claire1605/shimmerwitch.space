@@ -9,9 +9,9 @@ Autumn Light;Autumn Light;A game created for the Meditations project. It is an u
 Bath Spa University: Guest Lecturing;Bath Spa Lecturing;I gave a series of guest lectures on level design, character design and prototyping at Bath Spa University.;2019;10;Oct;Talk;201910BathLecturing;
 Bath University Workshop: Bitsy;Bath Uni: Bitsy;A workshop at Bath University on using Bitsy.;2019;10;Oct;Event;201910BathBitsy;
 Click Drip;Click Drip;An educational game created at Fuse Jam 3.;2019;10;Oct;Game;201910ClickDrip;
-Dark;Dark;A walking game with a black and white art style.;2019;10;Oct;Prototype;;
-Fuse Jam #03 Maps & Memories;Fuse Jam #03;A game jam with a physical meetup in Bristol.;2019;10;Oct;Event;;
-EGX Panel: Level Design Mysteries;EGX: Level Design Mysteries;A panel about level design, hosted by Mark Drew.;2019;09;Sep;Talk;;
+Dark;Dark;A walking game with a black and white art style.;2019;10;Oct;Prototype;201910Dark;
+Fuse Jam #03 Maps & Memories;Fuse Jam #03;A game jam with a physical meetup in Bristol.;2019;10;Oct;Event;201910FJ3;
+EGX Panel: Level Design Mysteries;EGX: Level Design Mysteries;A panel about level design, hosted by Mark Drew.;2019;09;Sep;Talk;201909EGXPanel;
 Oxford and London Interactive Fiction Meetup Workshop: Bitsy;IF Meetup Bitsy Workshop;A workshop at the Oxford and London Interactive Fiction Meetup on using Bitsy.;2019;08;Aug;Event;;
 Feral Vector Workshop: Marmalade;Feral Vector: Marmalade;A workshop at feral Vector games festival about making spherical games on oranges.;2019;06;Jun;Event;;
 Arcadia Talk: Small Tools and Personal Games;Arcadia: Small Tools;A short talk at Arcadia, Dundee titled Small Tools and Personal Games.;2019;05;May;Talk;;
@@ -33,7 +33,7 @@ Metal Detective;Metal Detective;A game about a robot travelling alone through a 
 Anura;Anura;A co-op adventure game about frogs with long sticky tongues. Photo/claymation and vocalised sfx.;2018;09;Sep;Prototype;;
 Fuse Jam #02 Sounds of the Emocean;Fuse Jam #02;A game jam with a physical meetup in Bristol.;2018;09;Sep;Event;;
 Spring Time;Spring Time;A game about a spring.;2018;09;Sep;Prototype;;
-Pixels x Paper Zine: On Bitsy;Pixels X Paper Zine: On Bitsy;A written piece about Bitsy in the Pixels X Paper zine.;2018;08;Aug;Visual/Written;201808PixelsXPaper;
+Pixels X Paper Zine: On Bitsy;Pixels x Paper Zine: On Bitsy;A written piece about Bitsy in the Pixels X Paper zine.;2018;08;Aug;Visual/Written;201808PixelsXPaper;
 Crab Adventure 1;Crab Adventure 1;A game inspired by Croc about a crab under the sea.;2018;07;Jul;Prototype;;
 Bristol Small Games meetup;Bristol Small Games;A semi-regular meetup in 2018 about making and playing small games using small tools.;2018;06;Jun;Event;;
 Feral Vector Workshop: Flat Pack;Feral Vector: Flat Pack;A workshop at Feral Vector games festival about using Ragzoukens tool Flat Pack to make small games.;2018;06;Jun;Event;;
