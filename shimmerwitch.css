@@ -13,6 +13,9 @@
 	--blogBgCol: #ecede6;
 	--blogFontCol: #e2804a;
 	--blogFontLinkCol: #0bdd94;
+	--fullMoonBlogBgCol: #391f6a;
+	--fullMoonBlogFontCol: #f9ffd8;
+	--fullMoonBlogFontLinkCol: #9bf1fe;
 }
 
 /*
@@ -45,6 +48,20 @@ html, body {
 	width: 500px;
 	color: var(--blogFontCol);
 	background-color: var(--blogBgCol);
+}
+
+.fullMoonBlog{
+	
+	font-family: 'Imprima', cursive;
+	font-size: 20px;
+	line-height: 24px;
+	padding: 0;
+	margin: 0 auto;
+    height: 100%;
+	background-attachment: fixed;
+	width: 500px;
+	color: var(--fullMoonBlogFontCol);
+	background-color: var(--fullMoonBlogBgCol);
 }
 
 .wrapper {
@@ -452,6 +469,12 @@ a.menuLink
 a.blogLink
 {
 	color: var(--blogFontLinkCol); 
+	text-decoration: none; 
+}
+
+a.fullMoonBlogLink
+{
+	color: var(--fullMoonBlogFontLinkCol); 
 	text-decoration: none; 
 }
 
