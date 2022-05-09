@@ -42,8 +42,6 @@
 <br>
 <h2>Curating visuals and events in Unity to music</h2>
 <br>
-Asterism is a personal project that I recently received funding for through Creative Scotland. I have been working on it in my spare time since late 2020, but will be working on it full-time as of this month! Here's the description I'm working with right now:
-<br><br>
 This month I've been thinking about the code structure of Asterism, and how I can work with Unity in the most flexible and painless way throughout the project. 
 I started by trying to identify the key systems which will need designing. 
 While I want to allow myself room for the project to evolve creatively, I also want to try to put into place as early as possible tools and code that will allow me to find limitations to work within. 
@@ -127,8 +125,46 @@ I spent a few hours playing around with Timeline’s functionality, and looking 
 So the next step was to see if I could draft a whole song game scene from Asterism using Timeline.
 <br><br>
 
-<h2>Timeline testing: draft scene for “Human”</h2>
+<h2>Draft scene for “Human”</h2>
 <br>
+This is my first attempt at a playable draft of one of the songs on Asterism, so I’ll document my process as I go. 
+I’m using the track ‘Human’ as my test song as it’s fairly short compared to some others and already has fairly strong visuals in my head. 
+I’m yet to record the vocals (or any of the instruments), but the song is generally about self-acceptance and opening up to someone who is supportive of you.
+<br><br>
+<figure>
+    <figcaption>You can listen to my rough version here:</figcaption>
+    <audio
+        controls
+        src="AsterismBlog\Images\human.mp3">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
+</figure>
+<br><br>
+When thinking about the game and the visuals, I started initially by imagining the environment and motion. 
+The player begins by looking up at a sky of planetary rings drifting over them while they stand small and motionless on the ground. 
+As the song progresses they get caught in an updraft that spins them up and around until they are floating on top of the rings they were looking at earlier. 
+They fly through them and look back at the planet spinning far away.
+<br><br>
+<img src="AsterismBlog\Images\02_HumanSketch.png"/ alt="[Sketch of gameplay ideas for 'Human']">
+<br><br>
+After this I had a brainstorming session with my partner James. 
+We listened to the track and talked through where each section would start and finish, as well as its primary emotions and narrative. 
+I had set some limitations in terms of input (player movement, camera rotation, one interact button) and the types of interactions that can occur e.g. you can’t pick up an object, you can only ‘interact’ or trigger something by walking into it. 
+This helped to come up with some more detailed ideas that fit in with my initial sketch.
+<br><br> 
+I was very inspired recently playing <a class="fullMoonBlogLink" target="_blank" href="http://bo-en.info/URLpalemachine.html">Pale Machine by Ben Esposito</a> as well as thinking about games like <a class="fullMoonBlogLink" target="_blank" href="https://www.mariowiki.com/WarioWare_(series)">Wario Ware</a>, which focus on one simple interaction in a series of vignettes. 
+<a class="fullMoonBlogLink" target="_blank" href="https://ledoux.itch.io/bitsy">Bitsy</a> has also been a constant source of inspiration for several years for me in the way that it keeps interaction to a minimum, but allows enormous amounts of variation and exploration within that.
+<br><br>
+Something I am keen to design into Asterism is the ability for the player to express themselves through the mechanics, and allow them to experience different visual pathways on repeated playthroughs. 
+I’m really excited about some of the initial ideas from this brainstorming session on how this might work, but perhaps I’ll save the details of this for a future blog post!
+<br><br>
+<img src="AsterismBlog\Images\02_HumanStoryboardRough.png"/ alt="[More detailed sketch of gameplay ideas for 'Human']">
+<br><br>
+From this sketch I was able to make a game design plan for the scene on Miro, which I’ve divided into the distinct gameplay sections of the song and added details of input, movement, camera etc. that I should be able to translate into Unity.
+<br><br>
+<img src="AsterismBlog\Images\02_HumanTimelineMiro.JPG"/ alt="[Miro plan for 'Human']">
+<br><br>
 
 
 <br><br>
