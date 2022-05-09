@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="utf-8">
+	<title>SHIMMERWITCH.SPACE</title>
+	<meta name="description" content="Claire Morwood is a game developer and artist based in Dundee, UK">
+	<meta name="keywords" content="game, game development, game developer, indie games, games, art, programming, game design">
+	<meta name="author" content="Claire Morwood">
+	<meta name="viewport" content="width=520">
+
+	<base href="/">
+
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet">
+	<link href="shimmerwitch.css" type="text/css" rel="stylesheet" >
+	<link rel="shortcut icon" href="pixelclaire.ico" />
+	
+	<meta property="og:title" content="Shimmerwitch.Space">
+	<meta property="og:description" content="Claire Morwood is a game developer and artist based in Dundee, UK">
+	<meta property="og:url" content="https://shimmerwitch.space">
+	<meta property="og:image" content="twitterLinkImgBitsy.JPG">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1414">
+	<meta property="og:type" content="website">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="https://shimmerwitch.space">
+	<meta name="twitter:creator" content="@shimmerwitch">
+	
+</head>
+<body class="fullMoonBlog">
+
+<div style="display: inline;">
+
+<br>
+<h3 class="logoBlog">Asterism</h3>
+<br>
+<img src="AsterismBlog\Images\FullMoon.gif" style="width:192px;height:192px; display:block; margin-left:auto; margin-right: auto"/ alt="Spinning moon">
+<br>
+<h3 class="logoBlog" style="font-size: 1.75em;">Full Moon<br>Dev Blog #02</h3>
+<h2 style="text-align: center; font-size: 1.3em;">16 May 2022</h2>
+<br>
+<h2>Curating visuals and events in Unity to music</h2>
+<br>
+Asterism is a personal project that I recently received funding for through Creative Scotland. I have been working on it in my spare time since late 2020, but will be working on it full-time as of this month! Here's the description I'm working with right now:
+<br><br>
+This month I've been thinking about the code structure of Asterism, and how I can work with Unity in the most flexible and painless way throughout the project. 
+I started by trying to identify the key systems which will need designing. 
+While I want to allow myself room for the project to evolve creatively, I also want to try to put into place as early as possible tools and code that will allow me to find limitations to work within. 
+I need to know what is possible and within my resources technically so that I can focus on being creative within that framework.
+<br><br>
+I made some notes in Miro on the questions that I need to answer, or at least look into, to help me focus my thoughts on what the game is. 
+To do this, I need to spend some time experimenting with each of the questions.
+<br><br>
+<img src="AsterismBlog\Images\02_MiroNotes.jpg"/ alt="[Notes on Miro - planning systems]">
+<br><br>
+I've been looking firstly at the note I wrote on ‘how to divide songs into sections' under ‘Structure of game’. 
+In Asterism I want to curate the visuals and mechanics to a series of songs. 
+Alternating songs sections will have different perspectives, environments, etc., similar to the way that many music videos have recurring themes and parallel stories running through the verses and choruses, perhaps with a narrative shift in a bridge or a new section of the song.
+<br><br>
+So I want some way of defining these sections and cutting between them exactly in time to the music. It would also be great if I were able to sync certain visuals to the beat.
+<br><br>
+
+<h2>Switching between song sections</h2>
+<br>
+When I worked on a <a class="fullMoonBlogLink" target="_blank" href="https://youtu.be/MdmRb-3wkAg?t=2075">curated musical gameplay scene in Before I Forget</a>, I only had to worry about one audio track with four jump-cuts, so I didn't spend much time making a robust scene-switching system. 
+Below is a screenshot of the way the code and scene is set up for this.
+<br><br>
+<img src="AsterismBlog\Images\02_BIFHallway.JPG"/ alt="[Before I Forget hallway scene in Unity]">
+<br><br>
+<img src="AsterismBlog\Images\02_BIFHallwayCode.JPG"/ alt="[Before I Forget hallway scene code]">
+<br><br>
+I created a list of intervals in seconds between each jump-cut, and a countdown coroutine that triggers each time a jump-cut happens. 
+When the countdown is complete the next jump-cut happens and various objects turn on / off, and bits of code update. 
+This actually works fine and should always be in time with the music, considering that 'WaitForSeconds' is not framerate dependent (aside from at tiny fractions of seconds). 
+However it would be much better if these jump-cuts were more closely coupled to the audio time itself, rather than the 'game time'.
+<br><br>
+When I wrote the code for my game <a class="fullMoonBlogLink" target="_blank" href="https://shimmerwitch.itch.io/beat-skipping">Beat Skipping</a> (after Before I Forget), I actually made a much worse system that is framerate dependent (it's all handled in the Update function and uses Time.deltaTime), which would mean that the jump-cuts happen a lot later in the audio track on slower computers, and earlier on faster computers.
+<br><br>
+<img src="AsterismBlog\Images\02_BeatSkippingCode.JPG"/ alt="[Beat Skipping code]">
+<br><br>
+Since writing the above code, I've learnt about a useful Unity property called <a class="fullMoonBlogLink" target="_blank" href="https://docs.unity3d.com/ScriptReference/AudioSettings-dspTime.html">dspTime</a>, which is based on the number of samples processed by the audio system, so it will always give an accurate position in time through an audio track.
+<br><br>
+Something that I did do in both these examples that I'll probably stick with for Asterism is to organise scene sections under parent gameobjects in the hierarchy that can simply be switched on / off at the right time. 
+With this method I can also easily switch between character controllers and cameras for each section by organising them below this parent object too.
+<br><br>
+
+<h2>Events on the beat</h2>
+<br>
+Last year I did some work on a system to handle beat management from a song. 
+It's a little bit of manual setup, but once the data is there it works pretty well at making things happen on the beat, as well as switching between song sections using dspTime as mentioned above. 
+The BPM of the song is set at the top, and then I create a list of all the sections of the song where anything related to the rhythm differs. 
+So for example, here the BPM is 90, but what I've called the 'beat rate' is like the drum beat, or at what fraction of the BPM do I want things to trigger on. 
+Then I have a set of actions I can call from other scripts that will always occur on the beat.
+<br><br>
+<img src="AsterismBlog\Images\02_SongManager.JPG"/ alt="[Song Manager class in the Unity inspector]">
+<br><br>
+<img src="AsterismBlog\Images\02_SongManagerScript.JPG"/ alt="[Song Manager code]">
+<br><br>
+This is the data for the song 'Transmission' which has a series of slow beeps in its intro, followed by a bassline and finally a drum beat. 
+I did some visual testing a while back using the Song Manager to time events.
+You can see the beat rate triggering the visuals in the video below where the radar spins 360 degrees every 'beat'.
+<br><br>
+This is a really useful system that I will probably continue to use for any repeating events and visuals in the game.
+<br><br>
+
+<h2>Unity Timeline</h2>
+<br>
+You know that feeling when you find a tool or piece of software that not only does everything you need it to, but also makes your job more enjoyable and opens up new possibilities that you had never imagined? 
+OK, maybe that's just me, but I'm not exaggerating when I say that I think Unity Timeline is The One. 
+The one tool I need that feels like it was made for Asterism.
+I’ve discovered that I work in a pretty visual way with music and find it really helpful to organise my thoughts about a song alongside a view of the soundwave or shape of the music. 
+A talk I saw by <a class="fullMoonBlogLink" target="_blank" href="https://www.annameredith.com/">Anna Meredith</a> about her process a couple of years ago was super inspiring to me in regards to this way of thinking. <a class="fullMoonBlogLink" target="_blank" href="https://www.youtube.com/watch?v=p7L-45db5-o&ab_channel=Ableton">Here’s a great clip</a> of her talking about her music sketches.
+<br><br>
+I’d been getting frustrated with my Song Manager script and how I don’t have a graphical representation of where the sections are within the track, as well as how manual and inflexible I knew it would be for the full project. 
+While it does work (and probably will still be useful for ‘on-the-beat’ events), it’s such a fiddly setup. 
+I knew that ideally what I wanted was a way to look at the soundwave of the track, and say “at this point in the song, trigger this event”. 
+Unity’s animation tool has a system for this called <a class="fullMoonBlogLink" target="_blank" href="https://docs.unity3d.com/Manual/script-AnimationWindowEvent.html">Animation Events</a>, but as the name suggests this is very catered to animations rather than audio. 
+I briefly looked into middleware such as Wwise, thinking that I might be able to use <a class="fullMoonBlogLink" target="_blank" href="https://www.audiokinetic.com/library/edge/?source=Help&id=working_with_cues">custom cues</a> to send event triggers over to Unity at points in the music. 
+I didn’t get far enough to find out if this is possible, and wasn’t super keen on using middleware anyway since this method again felt fiddly.
+<br><br>
+What I really wanted was a Unity tool that allows you to place events along a visual representation of an audio track, use dspTime, and would work alongside my Song Manager script should I still want to trigger events on the beat. 
+Well it turns out this tool has existed since 2018! 
+<a class="fullMoonBlogLink" target="_blank" href="https://docs.unity3d.com/Packages/com.unity.timeline@1.2/manual/index.html">Unity Timeline</a> is essentially a video editor inside Unity, perfectly designed to curate cinematic cutscenes, or, music videos. 
+I also found this <a class="fullMoonBlogLink" target="_blank" href="https://styly.cc/tips/timeline_unity_kaki/">brilliant tutorial</a> that covers the basics of Timeline, and an incredible interactive example of it in action. 
+I spent a few hours playing around with Timeline’s functionality, and looking into <a class="fullMoonBlogLink" target="_blank" href="https://www.youtube.com/watch?v=UEuM-Fckx5w&list=PL1XwjHBOypY8ObltiqoBkhncQjiqTHxQa&ab_channel=25games">extending the functionality further</a>, as well as experimenting with it in a <a class="fullMoonBlogLink" target="_blank" href="https://twitter.com/biomecollective/status/1520010017075654656?s=20&t=-Fisz7TtfhXBj_5XhZYolQ">Biome Collective game jam (0:24 - 0:36)</a> and love everything about it so far. 
+So the next step was to see if I could draft a whole song game scene from Asterism using Timeline.
+<br><br>
+
+<h2>Timeline testing: draft scene for “Human”</h2>
+<br>
+
+
+<br><br>
+Next Full Moon Dev Blog on 14 June 2022
+
+<a class="fullMoonBlogLink" target="_blank" href="http://www.shimmerwitch.space/AsterismBlog/FullMoonBlog01.html">Previous Full Moon Dev Blog</a>
+<br>
+<!--
+<a class="fullMoonBlogLink" target="_blank" href="">Next Full Moon Dev Blog</a>
+-->
+
+</body>
+</html>
