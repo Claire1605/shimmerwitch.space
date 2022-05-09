@@ -40,7 +40,7 @@
 <h3 class="logoBlog" style="font-size: 1.75em;">Full Moon<br>Dev Blog #02</h3>
 <h2 style="text-align: center; font-size: 1.3em;">16 May 2022</h2>
 <br>
-<h2>Curating visuals and events in Unity to music</h2>
+<h2>Curating visuals and events to music in Unity</h2>
 <br>
 This month I've been thinking about the code structure of Asterism, and how I can work with Unity in the most flexible and painless way throughout the project. 
 I started by trying to identify the key systems which will need designing. 
@@ -52,9 +52,8 @@ To do this, I need to spend some time experimenting with each of the questions.
 <br><br>
 <img src="AsterismBlog\Images\02_MiroNotes.jpg"/ alt="[Notes on Miro - planning systems]">
 <br><br>
-I've been looking firstly at the note I wrote on ‘how to divide songs into sections' under ‘Structure of game’. 
 In Asterism I want to curate the visuals and mechanics to a series of songs. 
-Alternating songs sections will have different perspectives, environments, etc., similar to the way that many music videos have recurring themes and parallel stories running through the verses and choruses, perhaps with a narrative shift in a bridge or a new section of the song.
+Alternating song sections will have different perspectives, environments, etc., similar to the way that many music videos have recurring themes and parallel stories running through the verses and choruses, perhaps with a narrative shift in a bridge or a new section of the song.
 <br><br>
 So I want some way of defining these sections and cutting between them exactly in time to the music. It would also be great if I were able to sync certain visuals to the beat.
 <br><br>
@@ -73,7 +72,9 @@ When the countdown is complete the next jump-cut happens and various objects tur
 This actually works fine and should always be in time with the music, considering that 'WaitForSeconds' is not framerate dependent (aside from at tiny fractions of seconds). 
 However it would be much better if these jump-cuts were more closely coupled to the audio time itself, rather than the 'game time'.
 <br><br>
-When I wrote the code for my game <a class="fullMoonBlogLink" target="_blank" href="https://shimmerwitch.itch.io/beat-skipping">Beat Skipping</a> (after Before I Forget), I actually made a much worse system that is framerate dependent (it's all handled in the Update function and uses Time.deltaTime), which would mean that the jump-cuts happen a lot later in the audio track on slower computers, and earlier on faster computers.
+When I wrote the code for my game <a class="fullMoonBlogLink" target="_blank" href="https://shimmerwitch.itch.io/beat-skipping">Beat Skipping</a> I used a similar system to control when the scene switching occurs. 
+This uses Unity's Time.deltaTime, which again is not framerate dependent. 
+However, this is still not directly coupled to the audio system and may end up out of sync on different computers.
 <br><br>
 <img src="AsterismBlog\Images\02_BeatSkippingCode.JPG"/ alt="[Beat Skipping code]">
 <br><br>
@@ -98,6 +99,8 @@ Then I have a set of actions I can call from other scripts that will always occu
 This is the data for the song 'Transmission' which has a series of slow beeps in its intro, followed by a bassline and finally a drum beat. 
 I did some visual testing a while back using the Song Manager to time events.
 You can see the beat rate triggering the visuals in the video below where the radar spins 360 degrees every 'beat'.
+<br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pLXWYnHnhqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br><br>
 This is a really useful system that I will probably continue to use for any repeating events and visuals in the game.
 <br><br>
