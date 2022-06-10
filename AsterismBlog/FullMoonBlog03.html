@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="utf-8">
+	<title>SHIMMERWITCH.SPACE</title>
+	<meta name="description" content="Claire Morwood is a game developer and artist based in Dundee, UK">
+	<meta name="keywords" content="game, game development, game developer, indie games, games, art, programming, game design">
+	<meta name="author" content="Claire Morwood">
+	<meta name="viewport" content="width=520">
+
+	<base href="/">
+
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet">
+	<link href="shimmerwitch.css" type="text/css" rel="stylesheet" >
+	<link rel="shortcut icon" href="pixelclaire.ico" />
+	
+	<meta property="og:title" content="Shimmerwitch.Space">
+	<meta property="og:description" content="Claire Morwood is a game developer and artist based in Dundee, UK">
+	<meta property="og:url" content="https://shimmerwitch.space">
+	<meta property="og:image" content="twitterLinkImgBitsy.JPG">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1414">
+	<meta property="og:type" content="website">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="https://shimmerwitch.space">
+	<meta name="twitter:creator" content="@shimmerwitch">
+	
+</head>
+<body class="fullMoonBlog">
+
+<div style="display: inline;">
+
+<br>
+<h3 class="logoBlog">Asterism</h3>
+<br>
+<img src="AsterismBlog\Images\FullMoon.gif" style="width:192px;height:192px; display:block; margin-left:auto; margin-right: auto"/ alt="Spinning moon">
+<br>
+<h3 class="logoBlog" style="font-size: 1.75em;">Full Moon<br>Dev Blog #03</h3>
+<h2 style="text-align: center; font-size: 1.3em;">14 June 2022</h2>
+<br>
+<h2>The Space Between</h2>
+<br>
+In this blog post I want to talk about a section of the game I've been trying to figure out for quite a while along with the various iterations and discarded ideas I had along the way for it. 
+<br><Br>
+In Asterism, there are a series of music tracks playable across the planets in the solar system. 
+But what about the space between those planets? 
+I've been experimenting with some ideas for how the player travels from one location to the next, as well as thinking about how the narrative within the songs relates to the narrative between them. 
+<br><br>
+There are a few questions that I wanted to address, such as who the player is when within / outside of the songs (are they a specific character, and is that the same character in both situations?), how much freedom of movement the have when travelling between planets, what is the scale of this space, what is the audio like, and the narrative? Lots of questions... 
+<br><br>
+The things that I do already know are that there will be 'interlude' pieces of instrumental music between each main song. These play while you are in the 'space between', while traveling from one planet to the next. 
+I also have some initial ideas about the narrative having two parallel stories (within and outside of the songs). 
+<br><br>
+To begin thinking about the narrative, I took a look at the songs I had drafted so far and the plans I already had for the order they would appear in the game. 
+This screenshot is a visual I began after I had written 3 or 4 songs, and added to it as I wrote more - thinking about where each song would fit. 
+Later on I also used it in reverse as a prompt for new songs, for example I knew I wanted a floaty, acousticy sounding song for the planet Neptune.  
+<br><br>
+<img src="AsterismBlog\Images\03_jamboardNarrative.JPG"/ alt="[Google Jamboard thinking about songs as planets]">
+<br><br>
+Once I had all the songs drafted (and some are still in a very rough state), I tried to think about the general themes of each song, and if there were ways I could link one to the next to make a complete journey from start to finish. 
+This proved pretty difficult, probably because I had never really planned it this way. 
+Overall the album does have themes around anxiety and moving towards self-acceptance, but I found that I was having to force links between the songs sometimes when maybe that wasn't helpful to the overall experience. 
+Here's a photo of this method anyway. 
+I listened to the album and used the little Pokémon figures as placeholder players moving through the narrative, which is probably the closest thing I've done to paper-prototyping so far. The act of moving an object through the planet sketches was actually much more helpful than it might seem to get a sense of interactivity at that stage. 
+<br><br>
+<img src="AsterismBlog\Images\03_a2albumThemes.JPG"/ alt="[Big sketch of the planets / songs and their narratives]">
+<br><br>
+I followed a similar process later on in Miro. This time I tried to simplify some of the themes to single words and map it across the journey through the planets. Above and below are where I made notes on parallel stories between whoever the character in the music is vs the playable character going between the planets. 
+What I found in general was that the tone of my writing was far too similar between the two, there wasn't enough to distinguish them and so it felt pointless to even have two stories unless I made some changes - so that's something I'm still working on. 
+<br><br>
+<img src="AsterismBlog\Images\03_miroNarrative.JPG"/ alt="[Miro board notes on narrative themes of songs and space metaphors]">
+<br><br>
+I struggled to think of how to make this in between story interesting and fit in with the songs. 
+So, I took a break to work on some of the visuals and mechanics in a format I'm more familar with - spreadsheets. 
+<br><br>
+I'd had this idea for a while (probably from playing games like <a class="fullMoonBlogLink" target="_blank" href="https://www.mobiusdigitalgames.com/outer-wilds.html">Outer Wilds</a>) that it would be cool if the player had a sense of the vast distances and isolation between planets in the solar system while travelling between them. 
+I went on a development tangent of looking up these distances, converting them into units I could use, and reconstructing a scale model of the solar system in Unity. 
+For some extra reading on this subject, I would highly recommend these two blog posts by Evgenii who has some excellent visualisations for these distances and scales:
+<a class="fullMoonBlogLink" target="_blank" href="https://evgenii.com/blog/sun-and-planet-sizes-in-scale/">"Proportionally sized Solar System objects in natural colors"</a>, and 
+<a class="fullMoonBlogLink" target="_blank" href="https://evgenii.com/blog/solar-system-with-proportional-distances/">"A picture of the Solar System with proportional distances"</a>. 
+<br><br>
+<img src="AsterismBlog\Images\03_spreadsheet.jpg"/ alt="[Spreadsheet notes on relative distances between planets]">
+<br><br>
+The problem is that these numbers are ridiculous, and my goal is not to make a simulation. 
+Here's a scenario for the direction this experiment was heading, the idea being that I would plan to write a piece of interlude music between each planet that corresponded in length to the relative distance between them. 
+The distance between the Sun and Mercury is around 57900000km. At the speed of light, this takes just over 3 minutes to traverse, which is actually a reasonable amount of time (maybe even a little long) for what I had in mind for an interlude track. 
+Assuming the player is travelling at the speed of light, let's see how long that would take them to travel to some other planets. That's column J of the spreadsheet, which is showing the time in minutes of travel time from one planet to the next - for example it takes 80 minutes to travel at light-speed from Saturn to Uranus. 
+So I'd have to write 3 ~hour-long pieces for the outer 3 planets. I'd definitely say I have some progressive rock influences but not to that extent. 
+Oh and that isn't taking into account leaving the solar system and visiting a black hole at the centre of the galaxy, which takes 17.5 thousand years in this scenario. 
+Here's the relative locations of the planets in Unity (not including the black hole). 
+The dots were added after I took the screenshot as you can't actually see them at all in the game engine when it's zoomed out this much (the planet sizes are also to scale), but you can see the scale of the sun for reference. 
+<br><br>
+<img src="AsterismBlog\Images\03_UnityPlanetScales.png"/ alt="[Relative distances of planets in Unity]">
+<br><br>
+<img src="AsterismBlog\Images\03_UnityPlanetScalesEarth.png"/ alt="[Relative distances of planets in Unity close up]">
+<br><br>
+I guess I did know how vast these distances become, but it was interesting to see it so clearly not working as a functional idea for the game, at least under this specific set of conditions that I'd kind of arbitrarily decided on. 
+The other problem with this simulation-like approach is that Unity doesn't deal very well with very big or very small distances and scales. 
+I'm not sure about the technicalities of it but things get weird and janky. 
+In some ways it feels pretty appropriate for venturing into the depths of space, but mostly just janky. 
+<br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QSB803EBTSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br><br>
+It's definitely important to note that I didn't really try to resolve this or find a technical workaround. 
+If the experiment had been janky but also kind of fun or inspired some other ideas maybe I would have pursued it further (which reminds me of this great GMTK video <a class="fullMoonBlogLink" target="_blank" href="https://www.youtube.com/watch?v=kMDe7_YwVKI&ab_channel=GameMaker%27sToolkit">"The Games That Designed Themselves"</a>).
+But the process made me realise that there was no need for the space to feel that 'realistic'.  
+I had moved quite far away from what I had originally wanted to focus on with this section of the game and the scope was expanding into areas that weren't accordant to the main experience. 
+<br><br>
+What actually is the intended experience then? I have in mind an abstracted space that provides breathing room between songs, allows room to explore a parallel narrative, and provides a tonal transition from one area to the next. 
+I guess a big question I still had was how I would deliver the narrative. 
+One idea I had was to have two radio tracks that you tune between. Each would have various clips of dialogue at different times, allowing you to create you own audio pathway through the narrative. 
+<br><br>
+<img src="AsterismBlog\Images\03_Notebook1.png"/ alt="[Notebook scan of radio tuning idea]">
+<br><br>
+Another idea involved flying past / through a series of in-world comic strip panels. 
+Neither of these ideas ever felt quite right, either due to fiddly implementation, potentially confusing controls or just the tone. 
+I started thinking about flat games again (I talk quite a lot about them in my <a class="fullMoonBlogLink" target="_blank" href="http://www.shimmerwitch.space/AsterismBlog/FullMoonBlog01.html">first blog post</a>), and how the format lends itself very well to the feeling of freely exploring a visual narrative. 
+So I sketched out what a flat game might look like, taking some inspiration from the radio tuning and in-world dialogue ideas.
+<br><br>
+<img src="AsterismBlog\Images\03_Notebook2.png"/ alt="[Notebook scan of flat game idea]">
+<br><br>
+And here's a video of how that turned out when I tried it out in Unity.
+<br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fYLoJEVADZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br><br>
+So far I really like how this feels to play. I did a little playtesting with some friends and it seems relatively intuitive and has the right vibe, at least for a rough version. 
+I'm going to keep iterating on this and seeing where I can expand it now that I have a fairly simple starting point that's easy to work with. We'll see where it goes!
+<br><br>
+Next Full Moon Dev Blog on 13 July 2022
+<br><br>
+<a class="fullMoonBlogLink" target="_blank" href="http://www.shimmerwitch.space/AsterismBlog/FullMoonBlog02.html">Previous Full Moon Dev Blog</a>
+<br>
+<!--
+<a class="fullMoonBlogLink" target="_blank" href="">Next Full Moon Dev Blog</a>
+-->
+
+<br><br>
+<a target="_blank" href="https://buttondown.email/shimmerwitch">Sign up to my newsletter to get updates about the project!</a>
+<br>
+
+</body>
+</html>
