@@ -50,7 +50,9 @@ I need to know what is possible and within my resources technically so that I ca
 I made some notes in Miro on the questions that I need to answer, or at least look into, to help me focus my thoughts on what the game is. 
 To do this, I need to spend some time experimenting with each of the questions.
 <br><br>
+<a href="AsterismBlog\Images\02_MiroNotes.jpg">
 <img src="AsterismBlog\Images\02_MiroNotes.jpg"/ alt="[Notes on Miro - planning systems]">
+</a>
 <br><br>
 In Asterism I want to curate the visuals and mechanics to a series of songs. 
 Alternating song sections will have different perspectives, environments, etc., similar to the way that many music videos have recurring themes and parallel stories running through the verses and choruses, perhaps with a narrative shift in a bridge or a new section of the song.
@@ -63,9 +65,13 @@ So I want some way of defining these sections and cutting between them exactly i
 When I worked on a <a class="fullMoonBlogLink" target="_blank" href="https://youtu.be/MdmRb-3wkAg?t=2075">curated musical gameplay scene in Before I Forget</a>, I only had to worry about one audio track with four jump-cuts, so I didn't spend much time making a robust scene-switching system. 
 Below is a screenshot of the way the code and scene is set up for this.
 <br><br>
+<a href="AsterismBlog\Images\02_BIFHallway.JPG">
 <img src="AsterismBlog\Images\02_BIFHallway.JPG"/ alt="[Before I Forget hallway scene in Unity]">
+</a>
 <br><br>
+<a href="AsterismBlog\Images\02_BIFHallwayCode.JPG">
 <img src="AsterismBlog\Images\02_BIFHallwayCode.JPG"/ alt="[Before I Forget hallway scene code]">
+</a>
 <br><br>
 I created a list of intervals in seconds between each jump-cut, and a countdown coroutine that triggers each time a jump-cut happens. 
 When the countdown is complete the next jump-cut happens and various objects turn on / off, and bits of code update. 
@@ -76,7 +82,9 @@ When I wrote the code for my game <a class="fullMoonBlogLink" target="_blank" hr
 This uses Unity's Time.deltaTime, which again is not framerate dependent. 
 However, this is still not directly coupled to the audio system and may end up out of sync on different computers.
 <br><br>
+<a href="AsterismBlog\Images\02_BeatSkippingCode.JPG">
 <img src="AsterismBlog\Images\02_BeatSkippingCode.JPG"/ alt="[Beat Skipping code]">
+</a>
 <br><br>
 Since writing the above code, I've learnt about a useful Unity property called <a class="fullMoonBlogLink" target="_blank" href="https://docs.unity3d.com/ScriptReference/AudioSettings-dspTime.html">dspTime</a>, which is based on the number of samples processed by the audio system, so it will always give an accurate position in time through an audio track.
 <br><br>
@@ -92,9 +100,13 @@ The BPM of the song is set at the top, and then I create a list of all the secti
 So for example, here the BPM is 90, but what I've called the 'beat rate' is like the drum beat, or at what fraction of the BPM do I want things to trigger on. 
 Then I have a set of actions I can call from other scripts that will always occur on the beat.
 <br><br>
+<a href="AsterismBlog\Images\02_SongManager.JPG">
 <img src="AsterismBlog\Images\02_SongManager.JPG"/ alt="[Song Manager class in the Unity inspector]">
+</a>
 <br><br>
+<a href="AsterismBlog\Images\02_SongManagerScript.JPG">
 <img src="AsterismBlog\Images\02_SongManagerScript.JPG"/ alt="[Song Manager code]">
+</a>
 <br><br>
 This is the data for the song 'Transmission' which has a series of slow beeps in its intro, followed by a bassline and finally a drum beat. 
 I did some visual testing a while back using the Song Manager to time events.
@@ -149,7 +161,9 @@ The player begins by looking up at a sky of planetary rings drifting over them w
 As the song progresses they get caught in an updraft that spins them up and around until they are floating on top of the rings they were looking at earlier. 
 They fly through them and look back at the planet spinning far away.
 <br><br>
+<a href="AsterismBlog\Images\02_HumanSketch.png">
 <img src="AsterismBlog\Images\02_HumanSketch.png"/ alt="[Sketch of gameplay ideas for 'Human']">
+</a>
 <br><br>
 After this I had a brainstorming session with my partner James. 
 We listened to the track and talked through where each section would start and finish, as well as its primary emotions and narrative. 
@@ -162,11 +176,15 @@ I was very inspired recently playing <a class="fullMoonBlogLink" target="_blank"
 Something I am keen to design into Asterism is the ability for the player to express themselves through the mechanics, and allow them to experience different visual pathways on repeated playthroughs. 
 I’m really excited about some of the initial ideas from this brainstorming session on how this might work, but perhaps I’ll save the details of this for a future blog post!
 <br><br>
+<a href="AsterismBlog\Images\02_HumanStoryboardRough.png">
 <img src="AsterismBlog\Images\02_HumanStoryboardRough.png"/ alt="[More detailed sketch of gameplay ideas for 'Human']">
+</a>
 <br><br>
 From this sketch I was able to make a game design plan for the scene on Miro, which I’ve divided into the distinct gameplay sections of the song and added details of input, movement, camera etc. that I should be able to translate into Unity (for higher resolution right-click the image and select Open in New Tab).
 <br><br>
+<a href="AsterismBlog\Images\02_HumanTimelineMiro.JPG">
 <img src="AsterismBlog\Images\02_HumanTimelineMiro.JPG"/ alt="[Miro plan for 'Human']">
+</a>
 <br><br>
 Lastly this month I used these sketches and design plans to create a first pass of the playable scene for Human in Unity. 
 Here's a recording of this scene being played through. 
@@ -178,9 +196,13 @@ It's been a very useful exercise for me to figure out if the interaction ideas I
 The visuals are all very placeholder but are a useful starting point too to get a sense of scale and colour. 
 Below are a couple of screenshots of the Timeline editor for this scene.
 <br><br>
+<a href="AsterismBlog\Images\02_timeline01.JPG">
 <img src="AsterismBlog\Images\02_timeline01.JPG"/ alt="[Timeline editor for 'Human']">
+</a>
 <br><br>
+<a href="AsterismBlog\Images\02_timeline02.JPG">
 <img src="AsterismBlog\Images\02_timeline02.JPG"/ alt="[Timeline editor for 'Human']">
+</a>
 <br><br>
 I'll be making these drafts of each song as I continue with development to test out the ideas, and then refining the gameplay from there. 
 Over the next four weeks though I'm going to take a look at some of the other areas of the game now that I am happy with this initial workflow for the songs.
