@@ -42,13 +42,13 @@
 <br>
 <h2>Handmade art assets</h2>
 <br>
-This month I wanted to write about the process I went through to create and digitise some hand-made art assets for the game. 
+This month I wanted to write about the process I used to create and digitise hand-made art assets for the game. 
 I intend to use mostly hand-made art in this project because I like the aesthetic, am more comfortable creating it than I am with digital art, and enjoy the process of making it. 
-Since the game is quite personal too, having hand-crafted art feels fitting to this. 
+Since the game is quite personal too, having hand-crafted art seems fitting. 
 <br><br>
 At the moment I'm working on a track called 'Hemisphere'. The level for the song is set on an icy planet, and the theme is around being unable to express what you're feeling and self-confidence in your words. 
-I decided that the primary material I wanted to use for this level would be cardboard and paper, and had been thinking of collaging paper onto cardboard shapes for most of the assets. 
-Because the theme centres around communication and words I wanted to include the lyrics visually within the level's art. 
+I decided that the primary material I wanted to use for this level would be collaged paper and cardboard and paper. 
+Because the theme centres around communication and words, I wanted to include the lyrics visually within the level's art. 
 I made a printable texture in a word doc with the repeated lyrics of the song filling each sheet, which I could then rip into sections for collaging. 
 <br><br>
 <a href="AsterismBlog\Images\09-materials.jpg">
@@ -56,7 +56,8 @@ I made a printable texture in a word doc with the repeated lyrics of the song fi
 </a>
 <br><br>
 I really liked how this looked, especially considering the wintery theme of the level - it looks like snow-covered branches. 
-The level needed a lot of trees, so to reduce the amount of unique trees I would need to create by hand I made trunks and branches separately. 
+<br><br>
+The level needed a lot of trees, so to reduce the amount of unique ones I would need to create by hand I made trunks and branches separately. 
 Then, later I could put these together in different combinations in Unity. 
 I used a craft knife for the cardboard, and cut the edges at an angle to expose the nice corrugated texture at the edges. I also tore some of the top layer of cardboard away so the trees looked less pristine. 
 <br><br>
@@ -74,19 +75,20 @@ The lightbox I have is a Havox HPB-60XD medium size lightbox. It's not the cheap
 So far, I really love it. I use my phone (Samsung Galaxy A40) to take photos using a locked manual focus and timer setting. 
 I've used more basic setups in the past, such as a couple of desklamps and a makeshift greenscreen and while this definitely does work the main issue I've always had is ensuring the lighting is consistant, strong enough, and diffused well. 
 The lightbox itself so far is fantastic. I specifically got one that had a hole in the top for downshooting, although my camera setup needs a bit of work still!
+I'm using a phone desk clamp with a flexible arm, which I've clamped onto the top of the lightbox so I can adjust the height of it. It works, but I'll probably iterate on this to get something more stable! 
 <br><br>
 <a href="AsterismBlog\Images\09-cameraSetup.jpg">
 <img src="AsterismBlog\Images\09-cameraSetup.jpg"/ alt="[Lightbox camera setup]">
 </a>
 <br><br>
-I'm using a phone desk clamp with a flexible arm, which I've clamped onto the top of the lightbox so I can adjust the height of it. It works, but I'll probably iterate on this to get something more stable! 
-The scanner I'm using is a Canon MG2950, and I use the Windows Scan software at 600dpi. 
+The scanner I'm using is a Canon MG2950, and I use the Windows Scan software at 600dpi. There's not too much more to say about the scanner! 
+I try to put a heavy book or push down on the lid while it's scanning for thicker things like cardboard to help keep it all flat. 
 <br><br>
 <a href="AsterismBlog\Images\09-scanner.png">
 <img src="AsterismBlog\Images\09-scanner.png"/ alt="[Scanner setup]">
 </a>
 <br><br>
-Here's a comparison of how the images came out using these two methods! 
+Here's a comparison of how the images came out using these two methods! The black background image is from the phone / lightbox setup, and the white background is the scanner. 
 <br><br>
 <a href="AsterismBlog\Images\09-photoRaw.jpg">
 <img src="AsterismBlog\Images\09-photoRaw.jpg"/ alt="[Raw photo]">
@@ -105,7 +107,7 @@ The next part of the process is the image editing. I took the photo and scan ver
 I use Photoshop CS2, and in general that version does pretty much everything I need it to. 
 The first method is using the eraser tool with a soft brush setting to manually remove the background and trace around the edges. This is really time-consuming, but can give a neater edge. 
 The second method I tried was using the magic wand tool (attemped a few times to get the right tolerance level), then feathering the edge by 2 pixels to get a closer selection. 
-This way is quicker, but sometimes needs a bit of manual cleanup after, and maintains some of the shadow around the object (the way I did it, at least). 
+This way is quicker, but sometimes needs a bit of manual cleanup afterwards. It maintains some of the shadow around the object (the way I did it, at least). 
 <br><br>
 <a href="AsterismBlog\Images\09-scannedPhotoComparison.png">
 <img src="AsterismBlog\Images\09-scannedPhotoComparison.png"/ alt="[Edited images comparison]">
@@ -114,13 +116,13 @@ This way is quicker, but sometimes needs a bit of manual cleanup after, and main
 After looking at these tests, I decided that I really liked the way the magic wand tool kept some of the shadow - and it did it in a more natural-looking way than I would have done by hand. 
 I also preferred the crispness of the photo image, compared to the scanned one. 
 As a final check though, I needed to put these images into Unity and see how they looked in the level itself. 
-I was able to give the trees shadows using a 3D mesh I made for sprites. The mesh is 2 planes with normals facing in opposite directions, and the UVs on the reverse side flipped and inverted, and I then use a cutout standard shader with the sprite as the main texture. 
+I was able to give the trees 3D shadows using a 3D mesh I made for sprites. The mesh is made from 2 planes with normals facing in opposite directions, and the UVs on the reverse side flipped and inverted. I then use a cutout standard shader with the sprite as the main texture. 
 <br><br>
 <a href="AsterismBlog\Images\09-unityComparisons.png">
 <img src="AsterismBlog\Images\09-unityComparisons.png"/ alt="[Edited images comparison in Unity]">
 </a>
 <br><br>
-So, in situ the shadows are much more obvious around the edges of the magic wand / feathered photo image. 
+In situ, the darkness around the edges is much more obvious in the magic wand / feathered photo image. 
 I realised as well that I'd also accidentally tested between a white and a black 'green screen' behind the images, since the scanner lid is white. 
 My conclusion here was that it looked better with a black background, and some shadow is good, but not the amount that was left from the magic wand method. 
 I decided from this that I would use photos, magic wand, and then do a little manual cleanup if needed. 
