@@ -51,12 +51,13 @@ Initially in this level, you walked around the inside surface of the Sun, repres
 This concave movement style was difficult to program and felt weird to play, so I changed to a world still inside the sphere but with a flat ground surface to walk on. I wanted a expansive sense of distance and emptiness so made the level quite large with a tower in the centre that took a while to climb. 
 I felt that this was definitely an improvement on the first iteration, however the drawback of such a large level right at the start of the game was that it took a long time before the player would be able to get to the main section (i.e. the playable music videos) of the game. 
 It put too much emphasis on this opening inside the Sun. 
+<br><br>
 So, I changed it again to something that only implied a large area but didn't allow the player to explore it fully. This allowed me to focus on the key goals of the Sun level, such as learning the controls and UI, and understanding why the protagonist is going out into space. 
 I was able to add more cinematic moments to this and predict where the path the player would take much easier too, which helped with estimating how long the level would take to play. 
 <br><br>
 I still wasn't happy with it though. This time it was the art that needed to change. The previous version was very 3D, which is not my strong point. I'd already run into a lot of frustration with Blender while trying to create the architecture of the Sun's lab and observatory. 
 I'm much more comfortable in a 2D space, so I felt that I should lean into that as much as possible.I still wanted it to <i>feel</i> 3D though. I also wanted the perspective to be detached and distant - before shifting to a much closer 3rd person view during the music video for Hemisphere (the next level). 
-The solution I came to was to use fixed camera perspective dioramas, inspired by games like <a target="_blank" href="https://finalfantasy-ix.square-enix-games.com/en-gb/home/">Final Fantasy IX</a> and <a target="_blank" href="https://www.mistwalkercorp.com/">Fantasian</a>. 
+The solution I came to was to use fixed camera perspective dioramas, inspired by games like <a class="fullMoonBlogLink" target="_blank" href="https://finalfantasy-ix.square-enix-games.com/en-gb/home/">Final Fantasy IX</a> and <a class="fullMoonBlogLink" target="_blank" href="https://www.mistwalkercorp.com/">Fantasian</a>. 
 This is something I knew I would enjoy doing and would fit the general hand-crafted aesthetic of the game better too. 
 <br><br>
 To begin with, I used the previous iteration's architecture as a reference and sketched out the parts of the level that I would need to create, and what camera angles might work. 
@@ -68,8 +69,8 @@ Colliders are put in place on the player's layer and visually lined up with the 
 Then, any 3D objects are placed at the same 'floor' height as the player so that they also collide with them properly. 
 There were a few extra tweaks to the setup too, like making sure the field of view of the cameras rendering the player and 3D world matched the field of view of my camera lens, to keep things consistant with the photograph of the diorama. 
 <br><br>
-<a href="AsterismBlog\Images\11-dioramaUnityTest">
-<img src="AsterismBlog\Images\11-dioramaUnityTest"/ alt="[Paper prototype dioramas in Unity]">
+<a href="AsterismBlog\Images\11-dioramaUnityTest.jpg">
+<img src="AsterismBlog\Images\11-dioramaUnityTest.jpg"/ alt="[Paper prototype dioramas in Unity]">
 </a>
 <br><br>
 The dioramas themselves are created from cardboard (pizza boxes from a recent takeaway, to be exact), taped with paper-based sticky tape, and then painted with acrylic paint. 
