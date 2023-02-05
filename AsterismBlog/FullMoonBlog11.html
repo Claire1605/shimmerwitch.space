@@ -37,33 +37,67 @@
 <br>
 <img src="AsterismBlog\Images\FullMoon.gif" style="width:192px;height:192px; display:block; margin-left:auto; margin-right: auto"/ alt="Spinning moon">
 <br>
-<h3 class="logoBlog" style="font-size: 1.75em;">Full Moon<br>Dev Blog #10</h3>
-<h2 style="text-align: center; font-size: 1.3em;">6 January 2023</h2>
+<h3 class="logoBlog" style="font-size: 1.75em;">Full Moon<br>Dev Blog #11</h3>
+<h2 style="text-align: center; font-size: 1.3em;">5 February 2023</h2>
 <br>
-<h2>Video update!</h2>
+<h2>Diorama art</h2>
 <br>
-Just a quick one for the new year!
+This month I've been working on the art for the first level of the game, which is set inside the Sun. 
+I've gone through a few iterations of this level's art and level design to get to where I'm at now, and it's changed quite dramatically in that time! 
+Initially in this level, you walked around the inside surface of the Sun, represented as a huge white sphere. The core of the Sun had 'threads' that emerged from it and extended out into space, which I had imagined were the lines connecting stars in constellations. 
 <br><br>
-I wanted to share a comparison of my progress on the level for the song 'Hemisphere' over the last few weeks. 
-After an initial prototype to get the basic structure and transitions into the level, I spent about a month polishing it up to where it's at now.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j7cAL1Jy-KM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <br><br>
-For comparison, here's a snippet of the old version:
+This concave movement style was difficult to program and felt weird to play, so I changed to a world still inside the sphere but with a flat ground surface to walk on. I wanted a expansive sense of distance and emptiness so made the level quite large with a tower in the centre that took a while to climb. 
+I felt that this was definitely an improvement on the first iteration, however the drawback of such a large level right at the start of the game was that it took a long time before the player would be able to get to the main section (i.e. the playable music videos) of the game. 
+It put too much emphasis on this opening inside the Sun. 
+So, I changed it again to something that only implied a large area but didn't allow the player to explore it fully. This allowed me to focus on the key goals of the Sun level, such as learning the controls and UI, and understanding why the protagonist is going out into space. 
+I was able to add more cinematic moments to this and predict where the path the player would take much easier too, which helped with estimating how long the level would take to play. 
 <br><br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xGHqGfb2l9Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+I still wasn't happy with it though. This time it was the art that needed to change. The previous version was very 3D, which is not my strong point. I'd already run into a lot of frustration with Blender while trying to create the architecture of the Sun's lab and observatory. 
+I'm much more comfortable in a 2D space, so I felt that I should lean into that as much as possible.I still wanted it to <i>feel</i> 3D though. I also wanted the perspective to be detached and distant - before shifting to a much closer 3rd person view during the music video for Hemisphere (the next level). 
+The solution I came to was to use fixed camera perspective dioramas, inspired by games like <a target="_blank" href="https://finalfantasy-ix.square-enix-games.com/en-gb/home/">Final Fantasy IX</a> and <a target="_blank" href="https://www.mistwalkercorp.com/">Fantasian</a>. 
+This is something I knew I would enjoy doing and would fit the general hand-crafted aesthetic of the game better too. 
 <br><br>
-And the same section from the new version:
+To begin with, I used the previous iteration's architecture as a reference and sketched out the parts of the level that I would need to create, and what camera angles might work. 
+Then, I made paper prototypes of the dioramas, photographed them, and took them into Unity to find out how the technical setup would work. 
+I worked on this part of the process with James, who has been developing parts of the game's code with me. 
+We set up three cameras: one to display the player character, one to display the diorama, and one to display any (digital) 3D objects in the scene. 
+The 3-camera approach means that the photographed diorama can be layered into the 3D world at the right angle to be convincing. 
+Colliders are put in place on the player's layer and visually lined up with the edges of the diorama to give the illusion that the player is walking within its bounds. 
+Then, any 3D objects are placed at the same 'floor' height as the player so that they also collide with them properly. 
+There were a few extra tweaks to the setup too, like making sure the field of view of the cameras rendering the player and 3D world matched the field of view of my camera lens, to keep things consistant with the photograph of the diorama. 
 <br><br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/huzlKi-M77E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<a href="AsterismBlog\Images\11-dioramaUnityTest">
+<img src="AsterismBlog\Images\11-dioramaUnityTest"/ alt="[Paper prototype dioramas in Unity]">
+</a>
 <br><br>
-I like this comparison in particular since the mechanics are basically the same, but pretty much all the art has changed and even the camera perspective. 
-I also had a fun idea for the avalanche that worked out nicely!
+The dioramas themselves are created from cardboard (pizza boxes from a recent takeaway, to be exact), taped with paper-based sticky tape, and then painted with acrylic paint. 
+The perfectly circular holes in the walls of the corridor and lab were part of the original pizza boxes - it's great re-using the properties of the source materials! 
+The tape had an unexpected wood-grain effect when painted, which was cool. I used a cutaway effect with the walls so that the camera angle would never hide anywhere the player was able to walk. 
+After the base coats dried I added more details and then decorated the dioramas with bits and pieces I had lying around the house. 
+I took photos at angles as close as possible to the paper prototypes, and then took closeups of the windows and other areas I wanted the player to be able to have a different view of. 
+The greenscreen in my lightbox meant that I could edit the details of the window-view later on. 
 <br><br>
-Over the next few months I plan to work through each level and update the music, art, and mechanics. 
+<a href="AsterismBlog\Images\11-dioramaPaint.jpg">
+<img src="AsterismBlog\Images\11-dioramaPaint.jpg"/ alt="[Crafting process for dioramas]">
+</a>
 <br><br>
-Next Full Moon Dev Blog on 5 February 2023
+Finally I replaced the protoype images in Unity with the final artwork, updated the wall collider positions and tested it out. 
+While some parts of the setup in Unity are a little fiddly, overall I find this process much easier to work with, and am really happy with how it looks! 
+<br><br>
+<a href="AsterismBlog\Images\11-dioramaUnity">
+<img src="AsterismBlog\Images\11-dioramaUnity"/ alt="[Final diorama in Unity]">
+</a>
+<br><br>
+Bonus video: the actual first iteration where I forgot to add a collider to the Sun sphere, and the player fell into the depths of space and the rendering breaking down.
+<br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mzpXSikJ_B0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<br><br>
+Next Full Moon Dev Blog on 7 March 2023
 <br><br>
 
-<a class="fullMoonBlogLink" href="http://www.shimmerwitch.space/AsterismBlog/FullMoonBlog09.html">Previous Full Moon Dev Blog</a>
+<a class="fullMoonBlogLink" href="http://www.shimmerwitch.space/AsterismBlog/FullMoonBlog10.html">Previous Full Moon Dev Blog</a>
 <br>
 <!--
 <a class="fullMoonBlogLink" target="_blank" href="">Next Full Moon Dev Blog</a>
