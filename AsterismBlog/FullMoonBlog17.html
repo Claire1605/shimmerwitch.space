@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta charset="utf-8">
+	<title>SHIMMERWITCH.SPACE</title>
+	<meta name="description" content="Claire Morwood is a game developer and artist based in Dundee, UK">
+	<meta name="keywords" content="game, game development, game developer, indie games, games, art, programming, game design">
+	<meta name="author" content="Claire Morwood">
+	<meta name="viewport" content="width=520">
+
+	<base href="/">
+
+	<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet">
+	<link href="shimmerwitch.css" type="text/css" rel="stylesheet" >
+	<link rel="shortcut icon" href="pixelclaire.ico" />
+	
+	<meta property="og:title" content="Shimmerwitch.Space">
+	<meta property="og:description" content="Claire Morwood is a game developer and artist based in Dundee, UK">
+	<meta property="og:url" content="https://shimmerwitch.space">
+	<meta property="og:image" content="twitterLinkImgBitsy.JPG">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="1414">
+	<meta property="og:type" content="website">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="https://shimmerwitch.space">
+	<meta name="twitter:creator" content="@shimmerwitch">
+	
+</head>
+<body class="fullMoonBlog">
+
+<div style="display: inline;">
+
+<br>
+<h3 class="logoBlog">Asterism</h3>
+<br>
+<img src="AsterismBlog\Images\FullMoon.gif" style="width:192px;height:192px; display:block; margin-left:auto; margin-right: auto"/ alt="Spinning moon">
+<br>
+<h3 class="logoBlog" style="font-size: 1.75em;">Full Moon<br>Dev Blog #17</h3>
+<h2 style="text-align: center; font-size: 1.3em;">29 September 2023</h2>
+<br>
+<h2>Green screen effects</h2>
+<br>
+For one of the music videos in Asterism I've been experimenting with recorded footage from my phone to see what interesting effects I can make. 
+I thought it would be fun to see what I could do with a green screen approach, where part of the video would be replaced with a different texture or video. 
+Last week I showed some of these tests to some of Biome Collective at one of our weekly 'sharings' chats, and have uploaded the video of us discussing them for you to see. 
+I've included screenshots and timestamps from the video along the way if there's anything specific you want to see more about, otherwise the full video is at the bottom of this page. 
+<br><br>
+
+<h2>How do green screens work?</h2>
+The main purpose of green screens is to remove backgrounds or replace part of an image. 
+Whatever you want to be replaced should be made a specific colour (the standard for this is bright super-saturated green, which is unlikley to be anywhere else in your footage. But it doesn't need to be green, you could use any colour in theory), which will then be replaced in post-production with another texture or video. 
+Often a physical screen will be used for this, which you might have seen in behind the scenes footage for films that use a lot of CG or locations that would be expensive to film at. 
+Sometimes it's the actors themselves who are green screened by wearing morph suits, which may be used for sci-fi/fantasy/superhero-type characters. 
+Other times it might be a specific screen, window, portal to another dimension, etc. that utilises the green screen effect. 
+<br><br>
+During post-production, a method called <a class="fullMoonBlogLink" target="_blank" href="https://en.wikipedia.org/wiki/Chroma_key">Chroma Key</a> is used to select the desired colour range and replace it with the new footage. 
+A lot of video editors will be able to add a chroma key filter. 
+For my testing I used OBS, which is primarily a screen-capturing software, but has a number of filters including chroma key that can be applied to your videos. I'll go into details about how to do this below. 
+<br><br>
+
+<h2>What was my goal?</h2>
+I had imagined a scene where a person was walking, but instead of their body you could see another scene. 
+Either you could move the person themselves to look around a static image, or you could move the scene that was replacing them. 
+Either way you'd be exploring this alternative scene through the silhouette of the person. 
+Separately, I wanted to have a mouth lip-syncing part of the song in one of the scenes. I orignally thought about <a class="fullMoonBlogLink" target="_blank" href="https://en.wikipedia.org/wiki/Rotoscoping">rotoscoping</a> this, but I think that would take too long. 
+
+<h2>How did I test the idea?</h2>
+I wanted to do a quick and cheap test before I invested in anything like a morph suit (not that they're expensive, it's just quite a niche thing to own if you don't have a purpose for it). 
+I enlisted the help of James and a friend of mine who was visiting for the weekend to help me film some test footage in a forest nearby. 
+We used a purple towel and purple blanket to cover ourselves like capes and walked around in front of James as he slowly walked forwards. 
+The main reason I chose purple here was mostly down to what large fabric I had available at home, and since I would just be using natural lighting I thought using anything actually green might be a mistake in the setting of a forest, where there is a lot of green. 
+<br>
+Video timestamp: 01:44
+<br><br>
+<a href="AsterismBlog\Images\17-01.PNG">
+<img src="AsterismBlog\Images\17-01.PNG"/ alt="[Green screen testing - phone footage of people with purple capes in a forest]">
+</a>
+<br><br>
+I also recorded some other footage of me walking away from the camera in various locations. These were for another video test, which I won't go into detail of here. I used this video for the background video of the green screen test though. 
+<br>
+Video timestamp: 01:53
+<br><br>
+<a href="AsterismBlog\Images\17-02.PNG">
+<img src="AsterismBlog\Images\17-02.PNG"/ alt="[Test background footage - person walking away from camera]">
+</a>
+<br><br>
+I then used OBS's Chroma Key filter to replace a specific purple colour range with the background video. 
+<br>
+Video timestamp: 02:05
+<br><br>
+<a href="AsterismBlog\Images\17-03.PNG">
+<img src="AsterismBlog\Images\17-03.PNG"/ alt="[Output from OBS, with purple caped person replaced with another video texture]">
+</a>
+<br><br>
+To use Chroma Key in OBS, add your video as a source and right-click it to add a filter. Then under the 'Effects Filters' you can select 'Chroma Key' and adjust the parameters. 
+These are the parameters I used in my test, but it will be different for each video. 
+<br>
+Video timestamp: 03:26
+<br><br>
+<a href="AsterismBlog\Images\17-04.PNG">
+<img src="AsterismBlog\Images\17-04.PNG"/ alt="[OBS Chroma Key filter settings]">
+</a>
+<br><br>
+This was an interesting test, and it worked well considering I hadn't put much thought into the colour/lighting etc. 
+OBS had felt like a good starting point to try this out quickly, but seeing the ouptut confirmed for me that I definitely wanted more interactivity in the green screen effect. 
+So next I moved into Unity and tried to recreate the effect there. 
+I followed <a class="fullMoonBlogLink" target="_blank" href="https://styly.cc/tips/tomo-chromakey/">this tutorial</a> for a chroma key shader, which worked perfectly. I edited it to have multiple colour pickers to broaden the colour range, but otherwise kept it the same. 
+The scene is set up with a 2D plane with the background texture, and another 2D plane with the chroma key shader, using a render texture from a video player as the main texture. 
+<br>
+Video timestamp: 04:50
+<br><br>
+<a href="AsterismBlog\Images\17-05.PNG">
+<img src="AsterismBlog\Images\17-05.PNG"/ alt="[Unity chroma key shader]">
+</a>
+<br><br>
+Next, I did another test to see how it would look to have a separate render texture as the background texture. 
+The goal here was to give the player the ability to freely look around a separate space through the replaced image, rather than just to display a static image or video. 
+I began by creating green screen versions of some of the player character sprites from my other levels, and used those as the top 'green screen' layer of the scene (rather than the purple cape video). 
+Now I had a character who could walk around the scene and render another texture wherever they moved. 
+Next, I replaced that background texture with a camera that had it's own render texture, which could then display anything else from the 3D Unity scene. 
+<br>
+Video timestamp: 11:46
+<br><br>
+<a href="AsterismBlog\Images\17-06.PNG">
+<img src="AsterismBlog\Images\17-06.PNG"/ alt="[3D world render texture]">
+</a>
+<br><br>
+I stopped at this point, because it felt like I'd tested everything I'd needed to know and would be able to make something cool from this! 
+The last screenshot I want to show is when I replaced the beach background with the video of me walking, which had the unintentional effect of looking like the character was following me. 
+<br>
+Video timestamp: 15:56
+<br><br>
+<a href="AsterismBlog\Images\17-07.PNG">
+<img src="AsterismBlog\Images\17-07.PNG"/ alt="[Green screen character following person in video]">
+</a>
+<br><br>
+That in itself could probably lead to lots of different mechanics! It feels like there's a LOT of possibilities with this effect, so it will be fun deciding where to go next with it! 
+I hope this has been useful for anyone out there who also wants to make weird green screen videos!
+
+The full video: 
+<br><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iTWlCL9w16g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<br><br>
+
+<br><br>
+Thanks for reading this moon's blog :)
+<br><br>
+Next Full Moon Dev Blog on 28 October 2023
+<br><br>
+
+<a class="fullMoonBlogLink" href="http://www.shimmerwitch.space/AsterismBlog/FullMoonBlog16.html">Previous Full Moon Dev Blog</a>
+<br>
+<!--
+<a class="fullMoonBlogLink" target="_blank" href="">Next Full Moon Dev Blog</a>
+-->
+
+<br><br>
+<a class="fullMoonBlogLink" target="_blank" href="https://buttondown.email/shimmerwitch">Sign up to my newsletter to get updates about the project!</a>
+<br><br>
+
+</body>
+</html>
