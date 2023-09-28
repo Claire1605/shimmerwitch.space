@@ -71,7 +71,7 @@ I wanted to do a quick and cheap test before I invested in anything like a morph
 I enlisted the help of James and a friend of mine who was visiting for the weekend to help me film some test footage in a forest nearby. 
 We used a purple towel and purple blanket to cover ourselves like capes and walked around in front of James as he slowly walked forwards. 
 The main reason I chose purple here was mostly down to what large fabric I had available at home, and since I would just be using natural lighting I thought using anything actually green might be a mistake in the setting of a forest, where there is a lot of green. 
-<br>
+<br><br>
 Video timestamp: 01:44
 <br><br>
 <a href="AsterismBlog\Images\17-01.PNG">
@@ -79,7 +79,7 @@ Video timestamp: 01:44
 </a>
 <br><br>
 I also recorded some other footage of me walking away from the camera in various locations. These were for another video test, which I won't go into detail of here. I used this video for the background video of the green screen test though. 
-<br>
+<br><br>
 Video timestamp: 01:53
 <br><br>
 <a href="AsterismBlog\Images\17-02.PNG">
@@ -87,7 +87,7 @@ Video timestamp: 01:53
 </a>
 <br><br>
 I then used OBS's Chroma Key filter to replace a specific purple colour range with the background video. 
-<br>
+<br><br>
 Video timestamp: 02:05
 <br><br>
 <a href="AsterismBlog\Images\17-03.PNG">
@@ -96,7 +96,7 @@ Video timestamp: 02:05
 <br><br>
 To use Chroma Key in OBS, add your video as a source and right-click it to add a filter. Then under the 'Effects Filters' you can select 'Chroma Key' and adjust the parameters. 
 These are the parameters I used in my test, but it will be different for each video. 
-<br>
+<br><br>
 Video timestamp: 03:26
 <br><br>
 <a href="AsterismBlog\Images\17-04.PNG">
@@ -108,7 +108,7 @@ OBS had felt like a good starting point to try this out quickly, but seeing the 
 So next I moved into Unity and tried to recreate the effect there. 
 I followed <a class="fullMoonBlogLink" target="_blank" href="https://styly.cc/tips/tomo-chromakey/">this tutorial</a> for a chroma key shader, which worked perfectly. I edited it to have multiple colour pickers to broaden the colour range, but otherwise kept it the same. 
 The scene is set up with a 2D plane with the background texture, and another 2D plane with the chroma key shader, using a render texture from a video player as the main texture. 
-<br>
+<br><br>
 Video timestamp: 04:50
 <br><br>
 <a href="AsterismBlog\Images\17-05.PNG">
@@ -120,7 +120,7 @@ The goal here was to give the player the ability to freely look around a separat
 I began by creating green screen versions of some of the player character sprites from my other levels, and used those as the top 'green screen' layer of the scene (rather than the purple cape video). 
 Now I had a character who could walk around the scene and render another texture wherever they moved. 
 Next, I replaced that background texture with a camera that had it's own render texture, which could then display anything else from the 3D Unity scene. 
-<br>
+<br><br>
 Video timestamp: 11:46
 <br><br>
 <a href="AsterismBlog\Images\17-06.PNG">
@@ -129,7 +129,7 @@ Video timestamp: 11:46
 <br><br>
 I stopped at this point, because it felt like I'd tested everything I'd needed to know and would be able to make something cool from this! 
 The last screenshot I want to show is when I replaced the beach background with the video of me walking, which had the unintentional effect of looking like the character was following me. 
-<br>
+<br><br>
 Video timestamp: 15:56
 <br><br>
 <a href="AsterismBlog\Images\17-07.PNG">
