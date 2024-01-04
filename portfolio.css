@@ -442,7 +442,7 @@ hr {
 
 p {
 	margin: 0;
-	padding: 0;
+	padding: 50;
 	margin-bottom: 8px;
 }
 
@@ -532,12 +532,6 @@ button {
 	padding: 5px 15px;
 	margin-top: 6px;
 	cursor: pointer;
-}
-
-div {
-	padding: 50px;
-	margin: 50px;
-	 border: 15px;
 }
 
 /*gallery*/
