@@ -1,6 +1,6 @@
 :root{
 	--bgrd: #F4EAFF;
-	--textMainCol: #FFFF00;
+	--textMainCol: #000000;
 	--textSmallCol: #FFA300;
 	--textBgrdCol: #A44CFF;
 	--textBgrdBorderCol: #3E007F;
@@ -9,7 +9,7 @@
 	--dropdownBgrdCol: #BD86FF;
 	--dropdownHoverCol: #FB4991;
 	--menuLinkCol: #F5F3DD;
-	--urlLinkCol: #F5F3DD;
+	--urlLinkCol: #BF2247;
 	--blogBgCol: #ecede6;
 	--blogFontCol: #e2804a;
 	--blogFontLinkCol: #0bdd94;
