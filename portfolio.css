@@ -296,108 +296,6 @@ h4{
 	background: url("C:/Users/Claire/Documents/GitHub/shimmerwitch.space/sun.png") no-repeat;
 	}
 
-#float1 {
-    position: absolute;
-    -webkit-animation: floatBubble1 2s infinite  normal ease-out;
-    animation: floatBubble1 2s infinite  normal ease-out;
-}
-@-webkit-keyframes floatBubble1 {
-    0% {
-        top:40%;
-		left: 5%;
-    }
-	50%{
-		top:39%;
-		left: 5%;
-	}
-    100% {
-        top: 40%;
-		left: 5%;
-    }
-}
-@keyframes floatBubble1 {
-    0% {
-        top:40%;
-		left: 5%;
-    }
-	50%{
-		top:39%;
-		left: 5%;
-	}
-    100% {
-        top: 40%;
-		left: 5%;
-    }
-}
-
-#float2 {
-    position: absolute;
-    -webkit-animation: floatBubble2 2s infinite  normal ease-out;
-    animation: floatBubble2 2s infinite  normal ease-out;
-}
-@-webkit-keyframes floatBubble2 {
-	0% {
-        top:60%;
-		left: 30%;
-    }
-	50%{
-		top:61%;
-		left: 30%;
-	}
-    100% {
-        top: 60%;
-		left: 30%;
-    }
-}
-@keyframes floatBubble2 {
-    0% {
-        top:60%;
-		left: 30%;
-    }
-	50%{
-		top:61%;
-		left: 30%;
-	}
-    100% {
-        top: 60%;
-		left: 30%;
-    }
-}
-
-#float3 {
-    position: absolute;
-    -webkit-animation: floatBubble3 2s infinite  normal ease-out;
-    animation: floatBubble3 2s infinite  normal ease-out;
-}
-@-webkit-keyframes floatBubble3 {
-    0% {
-        top:41%;
-		left: 60%;
-    }
-	50%{
-		top:40%;
-		left: 60%;
-	}
-    100% {
-        top: 41%;
-		left: 60%;
-    }
-}
-@keyframes floatBubble3 {
-    0% {
-        top:41%;
-		left: 60%;
-    }
-	50%{
-		top:40%;
-		left: 60%;
-	}
-    100% {
-        top: 41%;
-		left: 60%;
-    }
-}
-
 .video
 {	
 	width: 99%;
@@ -422,12 +320,6 @@ h4{
 	box-shadow: 0px 5px 0px 0px #ccc;
 }
 
-@-webkit-keyframes bgrdFade {  
-  0% { background-image: url('pinkBgrdStars.jpg');  }
-  50% { background-image: url('blueBgrdStars.jpg'); }
-  100% { background-image: url('pinkBgrdStars.jpg'); }
-}
-
 .bgrd {
     background-color: white;
 }   
@@ -442,8 +334,13 @@ hr {
 
 p {
 	margin: 0;
-	padding: 50;
+	padding: 0;
 	margin-bottom: 8px;
+}
+
+p.text {
+	text-align: left;
+	margin: 50;
 }
 
 .center { text-align: center; }
