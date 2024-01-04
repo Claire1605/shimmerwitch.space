@@ -536,6 +536,8 @@ button {
 
 div {
 	padding: 50px;
+	margin: 50px;
+	 border: 15px;
 }
 
 /*gallery*/
