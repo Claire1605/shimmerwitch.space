@@ -116,7 +116,7 @@ img { max-width: 100%; border:0; }
 
 h1, h2, h3, h4 {
 	font-family: 'Didact Gothic', sans-serif;
-	margin: 0;
+	margin: 20px;
 	padding: 0;
 	margin-top: 20px;
 	margin-bottom: 8px;
@@ -334,13 +334,13 @@ hr {
 
 p {
 	margin: 0;
-	padding: 0;
+	padding: 0px;
 	margin-bottom: 8px;
 }
 
 p.text {
 	text-align: left;
-	margin: 50;
+	margin: 20px;
 }
 
 .center { text-align: center; }
