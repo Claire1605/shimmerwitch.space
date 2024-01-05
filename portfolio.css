@@ -584,7 +584,9 @@ td.customTable {
 }
 
 /* Hide the images by default */
-.mySlides {
+.mySlides-digitalArt,
+.mySlides-pixelArt,
+.mySlides-claymation {
   display: none;
   text-align:center;
 }
@@ -658,11 +660,13 @@ td.customTable {
 }
 
 /* Add a transparency effect for thumnbail images */
-.demo {
+.demo-digitalArt,
+.demo-pixelArt,
+.demo-claymation {
   opacity: 0.6;
 }
 
 .active,
-.demo:hover {
+.demo-digitalArt:hover {
   opacity: 1;
 }

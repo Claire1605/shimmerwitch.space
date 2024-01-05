@@ -101,8 +101,8 @@
 </p>
 <br><br>
 
-<h2>Digital Art</h2>
-<br>
+<h2 style="text-align:center;">Digital Art</h2>
+<br><br><br>
 <p style="text-align:center;">
 <img src="artPortfolio\RiftonConcept_d600.png"/>
 <img src="artPortfolio\Screenshot-small_d400.png"/>
@@ -122,34 +122,36 @@
 <div class="container">
 
   <!-- Full-width images with number text -->
-  <div class="mySlides">
-    <div class="numbertext">1 / 6</div>
+  <div class="mySlides-digitalArt">
       <img src="artPortfolio\RiftonConcept_d600.png" style="height: 500px">
   </div>
 
-  <div class="mySlides">
-    <div class="numbertext">2 / 6</div>
+  <div class="mySlides-digitalArt">
       <img src="artPortfolio\Screenshot-small_d400.png" style="height: 500px">
   </div>
 
-  <div class="mySlides">
-    <div class="numbertext">3 / 6</div>
+  <div class="mySlides-digitalArt">
       <img src="artPortfolio\Screenshot_d600.png" style="height: 500px">
   </div>
 
-  <div class="mySlides">
-    <div class="numbertext">4 / 6</div>
+  <div class="mySlides-digitalArt">
       <img src="artPortfolio\Object-Examples_d400.jpg" style="height: 500px">
   </div>
 
-  <div class="mySlides">
-    <div class="numbertext">5 / 6</div>
+  <div class="mySlides-digitalArt">
       <img src="artPortfolio\KarstbayCavesConceptColour_d400.png" style="height: 500px">
   </div>
 
-  <div class="mySlides">
-    <div class="numbertext">6 / 6</div>
+  <div class="mySlides-digitalArt">
       <img src="artPortfolio\Jotunheim_d400.jpg" style="height: 500px">
+  </div>
+  
+    <div class="mySlides-digitalArt">
+      <img src="artPortfolio\Alfheim_d400.jpg" style="height: 500px">
+  </div>
+  
+    <div class="mySlides-digitalArt">
+      <img src="artPortfolio\heldensagen_d600.png" style="height: 500px">
   </div>
 
   <!-- Next and previous buttons -->
@@ -158,28 +160,34 @@
 
   <!-- Image text -->
   <div class="caption-container">
-    <p id="caption"></p>
+    <p id="caption-digitalArt"></p>
   </div>
 
   <!-- Thumbnail images -->
   <div class="row">
     <div class="column">
-      <img class="demo cursor" src="artPortfolio\RiftonConcept_d600.png" style="width:100%" onclick="currentSlide(1)" alt="RiftonConcept">
+      <img class="demo-digitalArt cursor" src="artPortfolio\RiftonConcept_d600.png" style="width:100%" onclick="currentSlide(1)" alt="RiftonConcept">
     </div>
     <div class="column">
-      <img class="demo cursor" src="artPortfolio\Screenshot-small_d400.png" style="width:100%" onclick="currentSlide(2)" alt="Screenshot-small">
+      <img class="demo-digitalArt cursor" src="artPortfolio\Screenshot-small_d400.png" style="width:100%" onclick="currentSlide(2)" alt="Screenshot-small">
     </div>
     <div class="column">
-      <img class="demo cursor" src="artPortfolio\Screenshot_d600.png" style="width:100%" onclick="currentSlide(3)" alt="Screenshot">
+      <img class="demo-digitalArt cursor" src="artPortfolio\Screenshot_d600.png" style="width:100%" onclick="currentSlide(3)" alt="Screenshot">
     </div>
     <div class="column">
-      <img class="demo cursor" src="artPortfolio\Object-Examples_d400.jpg" style="width:100%" onclick="currentSlide(4)" alt="Object-Examples">
+      <img class="demo-digitalArt cursor" src="artPortfolio\Object-Examples_d400.jpg" style="width:100%" onclick="currentSlide(4)" alt="Object-Examples">
     </div>
     <div class="column">
-      <img class="demo cursor" src="artPortfolio\KarstbayCavesConceptColour_d400.png" style="width:100%" onclick="currentSlide(5)" alt="KarstbayCavesConceptColour">
+      <img class="demo-digitalArt cursor" src="artPortfolio\KarstbayCavesConceptColour_d400.png" style="width:100%" onclick="currentSlide(5)" alt="KarstbayCavesConceptColour">
     </div>
     <div class="column">
-      <img class="demo cursor" src="artPortfolio\Jotunheim_d400.jpg" style="width:100%" onclick="currentSlide(6)" alt="Jotunheim">
+      <img class="demo-digitalArt cursor" src="artPortfolio\Jotunheim_d400.jpg" style="width:100%" onclick="currentSlide(6)" alt="Jotunheim">
+    </div>
+	  <div class="column">
+      <img class="demo-digitalArt cursor" src="artPortfolio\Alfheim_d400.jpg" style="width:100%" onclick="currentSlide(7)" alt="Alfheim">
+    </div>
+	  <div class="column">
+      <img class="demo-digitalArt cursor" src="artPortfolio\heldensagen_d600.png" style="width:100%" onclick="currentSlide(8)" alt="heldensagen">
     </div>
   </div>
 </div> 
@@ -199,7 +207,7 @@ function currentSlide(n) {
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
+  let dots = document.getElementsByClassName("demo-digitalArt");
   let captionText = document.getElementById("caption");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
