@@ -588,6 +588,7 @@ td.customTable {
 .mySlides-claymation {
   display: none;
   text-align:center;
+  height: 512px;
 }
 
 /* Add a pointer when hovering over the thumbnail images */
