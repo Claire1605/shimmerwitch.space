@@ -644,7 +644,7 @@ td.customTable {
 .row:after {
   content: "";
   display: table;
-  /*clear: both;*/
+  clear: both;
 }
 
 /* Six columns side by side */
