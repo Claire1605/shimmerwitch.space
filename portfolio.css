@@ -584,9 +584,12 @@ td.customTable {
 .mySlides-digitalArt,
 .mySlides-pixelArt,
 .mySlides-claymation {
-  display: none;
+
   text-align:center;
   height: 512px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Add a pointer when hovering over the thumbnail images */
