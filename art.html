@@ -610,7 +610,7 @@ function showSlidesClaymation(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  //slides[slideIndexClaymation-1].style.display = "block";
+  slides[slideIndexClaymation-1].style.display = "block";
   dots[slideIndexClaymation-1].className += " active";
   captionText.innerHTML = dots[slideIndexClaymation-1].alt;
 }
@@ -641,7 +641,7 @@ function showSlidesPixelArt(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  //slides[slideIndexPixelArt-1].style.display = "block";
+  slides[slideIndexPixelArt-1].style.display = "block";
   dots[slideIndexPixelArt-1].className += " active";
   captionText.innerHTML = dots[slideIndexPixelArt-1].alt;
 }
@@ -672,7 +672,7 @@ function showSlidesDigitalArt(n) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  //slides[slideIndexDigitalArt-1].style.display = "block";
+  slides[slideIndexDigitalArt-1].style.display = "block";
   dots[slideIndexDigitalArt-1].className += " active";
   captionText.innerHTML = dots[slideIndexDigitalArt-1].alt;
 }
