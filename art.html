@@ -502,9 +502,9 @@ function showSlidesClaymation(n) {
   let captionText = document.getElementById("caption-claymation");
   if (n > slides.length) {slideIndexClaymation = 1}
   if (n < 1) {slideIndexClaymation = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+  //for (i = 0; i < slides.length; i++) {
+    //slides[i].style.display = "none";
+  //}
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
@@ -533,9 +533,9 @@ function showSlidesPixelArt(n) {
   let captionText = document.getElementById("caption-pixelArt");
   if (n > slides.length) {slideIndexPixelArt = 1}
   if (n < 1) {slideIndexPixelArt = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+ // for (i = 0; i < slides.length; i++) {
+  //  slides[i].style.display = "none";
+ // }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
@@ -564,9 +564,9 @@ function showSlidesDigitalArt(n) {
   let captionText = document.getElementById("caption-digitalArt");
   if (n > slides.length) {slideIndexDigitalArt = 1}
   if (n < 1) {slideIndexDigitalArt = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+  //for (i = 0; i < slides.length; i++) {
+  //  slides[i].style.display = "none";
+ // }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
