@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136883425-1"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-	
-	gtag('config', 'UA-136883425-1');
-	</script>
-	
 	<meta charset="utf-8">
 	<title>SHIMMERWITCH.SPACE</title>
 	<meta name="description" content="Claire Morwood is a game developer and artist based in Dundee, UK">
@@ -25,21 +15,17 @@
 	<link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet">
 	<link href="twentytwenty.css" type="text/css" rel="stylesheet" >
 	<link rel="shortcut icon" href="pixelclaire.ico" />
-	
+
 	<meta property="og:title" content="Shimmerwitch.Space">
 	<meta property="og:description" content="Claire Morwood is a game developer and artist based in Dundee, UK">
 	<meta property="og:url" content="https://shimmerwitch.space">
-	<meta property="og:image" content="twitterLinkImg.JPG">
 	<meta property="og:image:width" content="1000">
 	<meta property="og:image:height" content="1414">
 	<meta property="og:type" content="website">
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:site" content="https://shimmerwitch.space">
-	<meta name="twitter:creator" content="@shimmerwitch">
 </head>
-<body onload="LoadArchiveList()" class="bgrdBlendFade">
+<body onload="LoadArchiveList()" class="simpleBackground">
 
-<table style="width:100%; height:100%; border-spacing: 0px; text-shadow: 1px 1px #000000; color: white">
+<table style="width:100%; height:100%; border-spacing: 0px; color: white">
   <tr>
 
     <th style="min-width: 200px; width:15%; height:100%; border-right: 2px; border-left: 0px; border-spacing: 0px; border-top: 0px; border-bottom: 0px; border-style: solid; padding-right: 4px">
@@ -48,13 +34,13 @@
 	</th>
 
     <th style="min-width: 400px;width:85%; height: 100%">
-		<iframe id="pageContent" src="Pages/home.html" width="100%" height="100%" scrolling="yes" frameborder="0" style="background-color: #ffffff77;  padding-left: 20px;">
+		<iframe id="pageContent" src="Pages/home.html" width="100%" height="100%" scrolling="yes" frameborder="0" style="padding-left: 20px;"> <-- add background-color: #ffffff77;  into style to change the page content backgound -->
 		<p>Your browser does not support iframes.</p>
 		</iframe>
 		<div id="placeholderContent" width="100%" height="100%" scrolling="yes" frameborder="0" style="display: none; background-color: #ffffff77; position: absolute; top: 50px; left: 20%;">
 		<p>Your browser does not support iframes.</p>
 		</div>
-	</th> 
+	</th>
 
   </tr>
 </table>
@@ -69,9 +55,9 @@ function LoadArchiveList() {
 		storedText = text;
     });
   });
-  
+
   var urlParams = new URLSearchParams(window.location.search);
-  
+
   if (urlParams.has("title"))
   {
 	UpdateIFrame(urlParams.get("title"), "");
@@ -106,11 +92,11 @@ function PopulateArchiveList(text, filterTag)
 	placeholder = document.getElementById("archiveList");
 
 	placeholder.innerHTML = "";
-	
+
 	var home = document.createElement('a');
 	home.setAttribute("onclick", "UpdateIFrame('home', '')");
-	home.innerHTML = "Home";
-	home.style= "cursor: pointer; font-size:24px; text-decoration: underline; text-align: right; color: #ffffff";
+	home.innerHTML = "Return Home";
+	home.setAttribute("class", "home");
 	placeholder.appendChild(home);
 
 	var arc = document.createElement('div');
@@ -128,8 +114,8 @@ function PopulateArchiveList(text, filterTag)
 
 	var tags = ["All"];
 
-	var tagColours = {"Game": "#A68CFF", "Prototype": "#AFC4CE", "Visual/Written": "#C2CB74", "Talk": "#FA6D92", "Event": "#FAA36A"};
-	
+	var tagColours = {"Game": "tagGame", "Prototype": "tagPrototype", "Visual/Written": "tagVisualWritten", "Talk": "tagTalk", "Event": "tagEvent"};
+
 	var filterText = document.createElement('span');
 	newText = document.createTextNode("filter by: ");
 	filterText.appendChild(newText);
@@ -138,7 +124,7 @@ function PopulateArchiveList(text, filterTag)
 	placeholder.appendChild(filterText);
 
 	var tag = document.createElement('span');
-	tag.setAttribute("style", "cursor: pointer; font-size:16px; color: #000000;");
+	tag.setAttribute("class", "tag");
 	newText = document.createTextNode("[all] ");
 	tag.appendChild(newText);
 	tag.setAttribute("onclick", "PopulateArchiveList(storedText,'');");
@@ -149,9 +135,9 @@ function PopulateArchiveList(text, filterTag)
 	 if (!tags.includes(t.Tag))
 	 {
 		tags.push(t.Tag);
-		
+
 		var tag = document.createElement('span');
-		tag.setAttribute("style", "cursor: pointer; font-size:16px; color: " + tagColours[t.Tag] + ";");
+		tag.setAttribute("class", "tag " + tagColours[t.Tag]);
 		newText = document.createTextNode("[" + t.Tag.toLowerCase() + "] ");
 		tag.appendChild(newText);
 		tag.setAttribute("onclick", "PopulateArchiveList(storedText,'" + t.Tag + "');");
@@ -163,7 +149,7 @@ function PopulateArchiveList(text, filterTag)
 	var currentYear = result[1].Year + 1;
 
 	 for(var i = 0; i < result.length; i++) {
-		
+
 		var t = result[i];
 
 		if (filterTag != "" && filterTag != t.Tag)
@@ -174,7 +160,7 @@ function PopulateArchiveList(text, filterTag)
 		if (t.Year != currentYear)
 		{
 		    var p = document.createElement('p');
-			p.setAttribute("style", "font-size:18px;margin-top: 10px; margin-bottom: 6px; color: #ffffff");
+			p.setAttribute("style", "font-size:18px;margin-top: 10px; margin-bottom: 6px;");
 			newText = document.createTextNode(t.Year);
 			p.appendChild(newText);
 			placeholder.appendChild(p);
@@ -183,7 +169,7 @@ function PopulateArchiveList(text, filterTag)
 		}
 
 	    newLink = document.createElement("a");
-		newLink.setAttribute("style", "color:#ffffff");
+		newLink.setAttribute("style", "color:000000");
 
 		newText = document.createTextNode(t.MonthName + ": ");
 		newLink.appendChild(newText);
@@ -191,7 +177,7 @@ function PopulateArchiveList(text, filterTag)
 
 		newLink = document.createElement("a");
 		newLink.setAttribute('onclick', "UpdateIFrame('" + t.HTMLPage + "', '" + t.Description + "');");
-		newLink.setAttribute("style", "color:"/*#CC5852*/ + tagColours[t.Tag] + "; cursor:pointer");
+		newLink.setAttribute("class", "tag " + tagColours[t.Tag]);
 
 		newText = document.createTextNode(t.NameAbbrev);
 		newLink.appendChild(newText);
@@ -219,7 +205,7 @@ function UpdateIFrame(htmlPage, placeholderDescription)
 		document.getElementById("pageContent").style.display = "inline-block";
 		document.getElementById("pageContent").src="Pages/"+htmlPage+".html";
 	}
-		
+
 	window.history.replaceState({ htmlPage }, htmlPage, "?title=" + htmlPage);
 }
 
